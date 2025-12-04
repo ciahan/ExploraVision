@@ -25,228 +25,11 @@ const theme = {
   lightBlue: "#BEE8F1",
   lightGreen: "#CFF3D9",
   accent: "#64B6C8",
+  darkPurple: "#2E294E",
+  pink: "#EFBCD5",
+  purple: "#BE97C6",
+  lightPurple: "#F9F7FF"
 };
-
-
-const sessions = [
-  {
-    id: "cell-structure-1",
-    title: "Cell Structure & Organelles",
-    mentor: "Ms. Adams",
-    kind: "Teacher-led",
-    location: "Room 214",
-    date: "2025-11-15",
-    start: "15:30",
-    spots: 12,
-    tags: ["AP Bio", "Organelles", "Endomembrane"],
-    blurb:
-      "Tour of organelles + what they actually do in FRQs. ER↔Golgi↔lysosome traffic, mitochondria, chloroplasts.",
-  },
-  {
-    id: "membrane-transport-1",
-    title: "Membrane Transport & Fluid Mosaic",
-    mentor: "Peer Tutors",
-    kind: "Peer-to-Peer",
-    location: "Library A",
-    date: "2025-11-16",
-    start: "16:00",
-    spots: 10,
-    tags: ["AP Bio", "Diffusion", "Osmosis", "Transport"],
-    blurb:
-      "Practice problems on diffusion, osmosis, tonicity, and transport proteins. Includes potato/osmolarity style questions.",
-  },
-  {
-    id: "cell-size-1",
-    title: "Cell Size, SA:V & Microscopy",
-    mentor: "Ms. Glenn",
-    kind: "Teacher-led",
-    location: "Room 133",
-    date: "2025-11-17",
-    start: "14:30",
-    spots: 8,
-    tags: ["AP Bio", "Surface Area:Volume", "Microscopy"],
-    blurb:
-      "Why cells stay small; calculate SA:V and predict diffusion rate. Quick microscope skills refresh.",
-  },
-  {
-    id: "prok-euk-1",
-    title: "Prokaryotes vs. Eukaryotes + Endosymbiosis",
-    mentor: "Peer Tutors",
-    kind: "Peer-to-Peer",
-    location: "Commons 2",
-    date: "2025-11-18",
-    start: "15:45",
-    spots: 12,
-    tags: ["AP Bio", "Prokaryote", "Eukaryote", "Endosymbiosis"],
-    blurb:
-      "Compare/contrast tables, evidence for endosymbiotic origin of mitochondria/chloroplasts, quick MCQ set.",
-  },
-  {
-    id: "cell-comm-1",
-    title: "Cell Communication & Signal Transduction",
-    mentor: "Ms. Arbogast",
-    kind: "Teacher-led",
-    location: "Room 318",
-    date: "2025-11-19",
-    start: "07:15",
-    spots: 9,
-    tags: ["AP Bio", "Signaling", "Reception-Transduction-Response"],
-    blurb:
-      "Ligands, GPCR vs. RTK, second messengers. Trace a pathway from signal to gene expression or enzyme activation.",
-  },
-  {
-    id: "cell-cycle-1",
-    title: "Cell Cycle, Checkpoints & Mitosis",
-    mentor: "Ms. Adams",
-    kind: "Teacher-led",
-    location: "Room 214",
-    date: "2025-11-19",
-    start: "15:30",
-    spots: 10,
-    tags: ["AP Bio", "Mitosis", "Checkpoints"],
-    blurb:
-      "G1/S/G2/M, cyclins & CDKs, spindle checkpoint. Diagram and predict outcomes under checkpoint failures.",
-  },
-  {
-    id: "meiosis-1",
-    title: "Meiosis, Variation & Nondisjunction",
-    mentor: "Peer Tutors",
-    kind: "Peer-to-Peer",
-    location: "Library A",
-    date: "2025-11-20",
-    start: "16:00",
-    spots: 14,
-    tags: ["AP Bio", "Meiosis", "Genetic Variation"],
-    blurb:
-      "Crossing over, independent assortment, and error cases. Build gamete maps; quick FRQ practice.",
-  },
-  {
-    id: "apoptosis-1",
-    title: "Cell Death (Apoptosis) & Cancer Basics",
-    mentor: "Ms. Glenn",
-    kind: "Teacher-led",
-    location: "Room 133",
-    date: "2025-11-21",
-    start: "14:30",
-    spots: 8,
-    tags: ["AP Bio", "Apoptosis", "Cancer"],
-    blurb:
-      "Intrinsic/extrinsic pathways, caspases, tumor suppressors vs. proto-oncogenes. Connect to cell-cycle control.",
-  },
-  {
-    id: "lab-review-1",
-    title: "AP Bio Lab: Diffusion & Osmosis Review",
-    mentor: "Peer Tutors",
-    kind: "Peer-to-Peer",
-    location: "Lab 1",
-    date: "2025-11-22",
-    start: "10:00",
-    spots: 16,
-    tags: ["AP Bio", "Lab Skills", "Data Analysis"],
-    blurb:
-      "Design prompts, graphing, χ², error bars, CER writing using dialysis bag/potato style datasets.",
-  },
-  {
-    id: "organelle-frq-1",
-    title: "Rapid FRQ Drills: Organelles & Transport",
-    mentor: "Peer Tutors",
-    kind: "Peer-to-Peer",
-    location: "Library B",
-    date: "2025-11-23",
-    start: "13:00",
-    spots: 10,
-    tags: ["AP Bio", "FRQ Practice"],
-    blurb:
-      "Timed mini-FRQs with scoring rubrics; feedback on claim/evidence/reasoning and diagrams.",
-  },
-  {
-    id: "catchup-office-hrs-1",
-    title: "Cell Unit Catch-Up Office Hours",
-    mentor: "Ms. Adams",
-    kind: "Teacher-led",
-    location: "Room 214",
-    date: "2025-11-23",
-    start: "15:15",
-    spots: 6,
-    tags: ["AP Bio", "Office Hours"],
-    blurb:
-      "Bring any cell-unit question—concept checks, past quizzes, or homework problems.",
-  },
-];
-
-const academSupport = [
-  {
-    type: "Teacher-Led",
-    date: "2025-11-15",
-    start: "5:30 PM",
-    end: "6:30 PM",
-    class: "AP Bio",
-    spots: 10
-  },
-  {
-    type: "Peer-Tutored",
-    date: "2025-11-16",
-    start: "11:00 AM",
-    end: "12:00 PM",
-    class: "AP Bio",
-    spots: 5
-  },
-  {
-    type: "Teacher-Led",
-    date: "2025-11-18",
-    start: "5:30 PM",
-    end: "6:30 PM",
-    class: "AP Bio",
-    spots: 10
-  },
-  {
-    type: "Teacher-Led",
-    date: "2025-11-20",
-    start: "6:30 PM",
-    end: "7:30 PM",
-    class: "AP Bio",
-    spots: 10
-  },
-  {
-    type: "Peer-Tutored",
-    date: "2025-11-22",
-    start: "2:30 PM",
-    end: "3:30 PM",
-    class: "AP Bio",
-    spots: 5
-  },
-  {
-    type: "Teacher-Led",
-    start: "6:30 PM",
-    end: "7:30 PM",
-    class: "AP Bio",
-    spots: 10
-  },
-  {
-    type: "Peer-Tutored",
-    date: "2025-11-26",
-    start: "5:30 PM",
-    end: "6:30 PM",
-    class: "AP Bio",
-    spots: 5
-  },
-  {
-    type: "Teacher-Led",
-    date: "2025-11-28",
-    start: "6:30 PM",
-    end: "7:30 PM",
-    class: "AP Bio",
-    spots: 10
-  },
-  {
-    type: "Teacher-Led",
-    date: "2025-11-30",
-    start: "11:00 AM",
-    end: "12:00 PM",
-    class: "AP Bio",
-    spots: 10
-  },
-];
 
 function usePlanner() {
   const [items, setItems] = useState(() => {
@@ -307,15 +90,12 @@ function Header({ onHome, onScheduler, onPeerSupport, onResources, onDashboard }
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const bg = scrolled ? "rgba(190,232,241,0.75)" : "rgba(190,232,241,0.55)"; //rgba(178, 232, 232, 0.7)
   const link =
     "cursor-pointer text-sm sm:text-base font-semibold hover:underline focus-visible:underline focus:outline-none";
-
-
   return (
     <div
       className={`sticky top-0 z-10 backdrop-blur transition-all ${scrolled ? "shadow-sm" : ""}`}
-      style={{ background: bg }}
+      style={{ background: theme.pink}}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between py-3">
         <div className="flex items-center gap-5">
@@ -326,17 +106,17 @@ function Header({ onHome, onScheduler, onPeerSupport, onResources, onDashboard }
               className="h-10 w-auto"
             />
           </button>
-          <button className={link} style={{ color: theme.text }} onClick={onScheduler}>
-            Scheduler
+          <button className={link} style={{ color: theme.darkPurple }} onClick={onScheduler}>
+            History
           </button>
-          <button className={link} style={{ color: theme.text }} onClick={onPeerSupport}>
-            Peer Support
+          <button className={link} style={{ color: theme.darkPurple }} onClick={onPeerSupport}>
+            Our Solution
           </button>
-          <button className={link} style={{ color: theme.text }} onClick={onResources}>
-            Resources
+          <button className={link} style={{ color: theme.darkPurple }} onClick={onResources}>
+            Impact
           </button>
-          <button className={link} style={{ color: theme.text }} onClick={onDashboard}>
-            Dashboard
+          <button className={link} style={{ color: theme.darkPurple }} onClick={onDashboard}>
+            Bibliography
           </button>
         </div>
       </div>
@@ -379,56 +159,12 @@ function Welcome() {
   );
 }
 
-function SessionCard({ s, onOpen, signed }) {
-  const remaining = Math.max(0, s.spots - signed(s.id));
-  return (
-    <div
-      onClick={() => onOpen(s)}
-      className="cursor-pointer rounded-md p-4 shadow-sm border hover:shadow-md transition bg-white"
-      style={{ borderColor: theme.ring }}
-    >
-      <div className="text-lg font-bold mb-1" style={{ color: theme.text }}>
-        {s.title}
-      </div>
-      <div className="text-xs opacity-80 mb-2">
-        {s.kind} • {s.mentor} • {s.location}
-      </div>
-      <div className="text-xs opacity-80">
-        {s.date} @ {s.start}
-      </div>
-      <div className="flex flex-wrap gap-2 my-3">
-        {s.tags.map((t) => (
-          <span
-            key={t}
-            className="rounded-full px-2 py-0.5 text-[11px] border"
-            style={{ background: theme.soft, borderColor: theme.ring, color: theme.text }}
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-      <div className="h-2 w-full rounded bg-[#ECF7F9]">
-        <div
-          className="h-2 rounded"
-          style={{
-            width: `${(signed(s.id) / s.spots) * 100}%`,
-            background: theme.accent,
-          }}
-        />
-      </div>
-      <div className="mt-2 text-xs opacity-70">
-        {signed(s.id)} signed • {remaining} spots left
-      </div>
-    </div>
-  );
-}
-
 function Home({ signed, onOpen }) {
   return (
     <div
       className="w-full min-h-screen relative"
       style={{
-        backgroundImage: "url('/assets/doodles/homepage.png')",
+        backgroundColor: theme.lightPurple,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -436,77 +172,6 @@ function Home({ signed, onOpen }) {
     >
       <div className="max-w-6xl mx-auto px-5">
         <Welcome />
-      </div>
-    </div>
-  );
-}
-
-function Detail({ s, onBack, onSign }) {
-  const [slots, setSlots] = useState(1);
-  const [note, setNote] = useState("");
-  const remaining = () => Math.max(0, s.spots - onSign.signedFor(s.id));
-  return (
-    <div className="max-w-3xl mx-auto px-4">
-      <button
-        onClick={onBack}
-        className="mb-4 inline-flex items-center gap-2 text-sm hover:underline"
-        style={{ color: theme.accent }}
-      >
-        ← Back
-      </button>
-
-      <div className="rounded-md border p-5 bg-white" style={{ borderColor: theme.ring }}>
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <div className="text-2xl font-extrabold" style={{ color: theme.text }}>
-              {s.title} Support Session
-            </div>
-            <div className="text-sm opacity-80">
-              {s.kind} • {s.mentor} • {s.location}
-            </div>
-            <div className="text-sm opacity-80">
-              {s.date} @ {s.start}
-            </div>
-          </div>
-          <div className="text-sm px-3 py-1 rounded-md border" style={{ borderColor: theme.ring }}>
-            Spots left: <b>{remaining()}</b> / {s.spots}
-          </div>
-        </div>
-
-        <p className="mt-4 opacity-90" style={{ color: theme.text }}>
-          {s.blurb}
-        </p>
-
-        <div className="mt-5 grid gap-3 sm:grid-cols-1">
-          <label className="text-sm" style={{ color: theme.text }}>
-            Note (optional):
-            <input
-              value={note}
-              onChange={(e) => setNote(e.target.value)}
-              placeholder="Topics / accommodations"
-              className="block mt-1 rounded-md border px-3 py-2 text-sm w-full"
-              style={{ borderColor: theme.ring }}
-            />
-          </label>
-        </div>
-
-        <button
-          onClick={() => {
-            planner.add({
-              key: `support:${idx}-${s.date}-${s.start}`,
-              sessionId: `support:${idx}`,
-              title: `${s.type} Support (${s.class})`,
-              slots: 1,
-              date: s.date,
-              note,
-            });
-            alert("Reserved! Added to your To-Dos.");
-          }}
-          className="cursor-pointer px-4 py-2 rounded-md font-semibold hover:opacity-90"
-          style={{ background: theme.lightBlue, color: theme.text }}
-        >
-          + Reserve & Add to My To-Dos
-        </button>
       </div>
     </div>
   );
@@ -1411,284 +1076,6 @@ function Resources( celebrate ) {
       </div>
     </div>
   )
-}
-
-/* ---------------- emoji confetti ---------------- */
-function EmojiConfetti({ trigger }) {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    if (!trigger) return;
-
-    const container = containerRef.current;
-    if (!container) return;
-
-    const emojis = ["🎉", "✨", "🧬", "💫", "🌟", "🧪"];
-    const particles = [];
-
-    for (let i = 0; i < 25; i++) {
-      const span = document.createElement("span");
-      span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-      span.style.position = "absolute";
-      span.style.left = Math.random() * 100 + "%";
-      span.style.fontSize = 20 + Math.random() * 18 + "px";
-      span.style.animation = `confetti-fall ${1 + Math.random()}s ease-out forwards`;
-      span.style.opacity = "1";
-      span.style.top = "0px";
-
-      container.appendChild(span);
-      particles.push(span);
-
-      setTimeout(() => container.removeChild(span), 1200);
-    }
-  }, [trigger]);
-
-  return (
-    <div
-      ref={containerRef}
-      className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden"
-    />
-  );
-}
-
-/* ---------------- interactive quiz ---------------- */
-function Quiz({ celebrate, questions }) {
-  // --- state ---
-  const [index, setIndex] = useState(0);                           // current question index
-  const [selected, setSelected] = useState(null);                  // selected choice index
-  const [submitted, setSubmitted] = useState(false);               // has user hit submit for this question
-  const [finished, setFinished] = useState(false);                 // quiz finished?
-  const [answers, setAnswers] = useState(
-    () => Array(questions.length).fill(null)                       // per-question selected choice
-  );
-
-  const q = questions[index];
-
-  // derive score from answers array
-  const total = questions.length;
-  const correctCount = answers.reduce(
-    (sum, ans, i) => sum + (ans === questions[i].answer ? 1 : 0),
-    0
-  );
-  const wrongCount = total - correctCount;
-
-  // when you move between questions, load stored answer for that question
-  useEffect(() => {
-    const prev = answers[index];
-    setSelected(prev);
-    setSubmitted(prev !== null); // show explanation again if already answered
-  }, [index, answers]);
-
-  const submit = () => {
-    if (selected == null) return; // must pick something
-
-    setSubmitted(true);
-    setAnswers((prev) => {
-      const next = [...prev];
-      next[index] = selected;
-      return next;
-    });
-
-    // fire confetti on correct answers
-    if (selected === q.answer && typeof celebrate === "function") {
-      celebrate();
-    }
-  };
-
-  const next = () => {
-    if (!submitted) return; // force them to submit before moving on
-
-    if (index === total - 1) {
-      // last question -> show results
-      setFinished(true);
-    } else {
-      setIndex((i) => i + 1);
-    }
-  };
-
-  const prev = () => {
-    if (index === 0) return;
-    setIndex((i) => i - 1);
-  };
-
-  const restart = () => {
-    setIndex(0);
-    setSelected(null);
-    setSubmitted(false);
-    setFinished(false);
-    setAnswers(Array(questions.length).fill(null));
-  };
-
-  // ----- results screen -----
-  if (finished) {
-    return (
-      <div>
-        <h2 className="text-3xl font-extrabold mb-4" style={{ color: theme.text }}>
-          🎉 Quiz Complete!
-        </h2>
-
-        <p className="opacity-80 mb-4" style={{ color: theme.text }}>
-          You answered <b>{correctCount}</b> correct out of <b>{total}</b> questions.
-        </p>
-
-        <p className="opacity-70 mb-6 text-sm" style={{ color: theme.text }}>
-          Try again to beat your score or review any tricky questions!
-        </p>
-
-        <button
-          onClick={restart}
-          className="cursor-pointer px-4 py-2 rounded-md font-semibold"
-          style={{
-            borderColor: theme.ring,
-            background: theme.lightBlue,
-            color: theme.text,
-          }}
-        >
-          Restart Quiz
-        </button>
-      </div>
-    );
-  }
-
-  // ----- question screen -----
-  return (
-    <div>
-      <div className="text-xs mb-2 opacity-70" style={{ color: theme.text }}>
-        Question {index + 1} of {total}
-      </div>
-
-      <div className="text-lg font-semibold mb-4" style={{ color: theme.text }}>
-        {q.q}
-      </div>
-
-      <div className="space-y-2 mb-4">
-        {q.choices.map((c, i) => {
-          const isSelected = selected === i;
-          const selectedStyle = isSelected
-            ? { background: "#E0F7FA", borderColor: theme.accent }
-            : {};
-
-          return (
-            <button
-              key={i}
-              onClick={() => setSelected(i)}
-              className="cursor-pointer w-full text-left px-3 py-2 border rounded-md transition"
-              style={{ borderColor: theme.ring, color: theme.text, ...selectedStyle }}
-            >
-              {c}
-            </button>
-          );
-        })}
-      </div>
-
-      {!submitted ? (
-        <button
-          onClick={submit}
-          className="cursor-pointer px-4 py-2 rounded-md font-semibold"
-          style={{ borderColor: theme.ring, background: theme.lightBlue, color: theme.text }}
-        >
-          Submit
-        </button>
-      ) : (
-        <>
-          <div
-            className="mt-4 p-3 rounded-md border text-sm"
-            style={{
-              borderColor: selected === q.answer ? theme.lightGreen : "#ffb3b3",
-              background:
-                selected === q.answer ? theme.lightGreen : "#ffe6e6",
-              color: theme.text,
-            }}
-          >
-            <b>{selected === q.answer ? "Correct!" : "Incorrect."}</b>
-            <br />
-            {q.explain}
-          </div>
-
-          <div className="mt-4 flex gap-3">
-            <button
-              onClick={prev}
-              disabled={index === 0}
-              className="cursor-pointer px-3 py-2 rounded-md border text-sm disabled:opacity-40"
-              style={{ borderColor: theme.ring }}
-            >
-              Back
-            </button>
-
-            <button
-              onClick={next}
-              className="cursor-pointer px-3 py-2 rounded-md border text-sm"
-              style={{ borderColor: theme.ring }}
-            >
-              {index === total - 1 ? "Finish" : "Next"}
-            </button>
-          </div>
-        </>
-      )}
-    </div>
-  );
-}
-
-
-/* ---------------- video resources ---------------- */
-function VideoResources() {
-  const videoList = [
-    {
-      title: "Cell Organelles Overview",
-      url: "https://www.youtube.com/embed/URUJD5NEXC8",
-    },
-    {
-      title: "Cell Membrane & Transport",
-      url: "https://www.youtube.com/embed/0fKBhvDjuy0",
-    },
-    {
-      title: "Signal Transduction Pathways (AP Bio)",
-      url: "https://www.youtube.com/embed/-8lO4G4d0uk",
-    },
-    {
-      title: "Mitosis Explained",
-      url: "https://www.youtube.com/embed/f-ldPgEfAHI",
-    },
-    {
-      title: "Meiosis & Genetic Variation",
-      url: "https://www.youtube.com/embed/VzDMG7ke69g",
-    },
-  ];
-
-  return (
-    <div className="max-w-5xl mx-auto px-4">
-      <h2 className="text-3xl font-extrabold mb-4" style={{ color: theme.text }}>
-        Biology Video Library
-      </h2>
-      <p className="opacity-80 mb-6" style={{ color: theme.text }}>
-        Helpful walkthroughs to reinforce class concepts. Watch, pause, and take notes.
-      </p>
-
-      <div className="grid gap-6 sm:grid-cols-2">
-        {videoList.map((v) => (
-          <div
-            key={v.url}
-            className="rounded-md overflow-hidden border bg-white shadow-sm"
-            style={{ borderColor: theme.ring }}
-          >
-            <div className="px-3 py-2 font-semibold" style={{ color: theme.text }}>
-              {v.title}
-            </div>
-
-            <div className="w-full aspect-video bg-black">
-              <iframe
-                src={v.url}
-                title={v.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
 }
 
 /* ---------------- scheduler ---------------- */
