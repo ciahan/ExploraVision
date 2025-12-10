@@ -8,103 +8,15 @@
   -ms-overflow-style: auto !important;  /* IE/Edge */
   scrollbar-width: auto !important;     /* Firefox */
 }
-
-.react-calendar * {
-    border-radius: 16px !important;
+.hanging-indent {
+  /* Indent all lines by 2em (adjust as needed) */
+  padding-left: 2em;
+  /* Pull the first line back out by the same negative amount */
+  text-indent: -2em;
+  /* Add space between items */
+  margin-bottom: 10px;
 }
-.react-calendar {
-    /* override default calendar font to Poppins */
-  font-family: "Poppins", sans-serif !important;
-  /* change calendar size */
-    width: 100% !important;
-  /* make calendar edges rounded */
-  border: 1px solid #64B6C8 !important;
-    border-radius: 16px !important;
-    overflow: hidden !important;
-}
-.react-calendar__navigation {
-    background: #E0F7FA;
-  height: 80px !important;
-  padding: 10px 14px !important;
-  display: flex !important;
-  align-items: center !important;
-  margin-bottom: 0px !important;
-}
-/* for the month/year label (e.g. November 2025) */
-.react-calendar__navigation button {
-    height: 60px !important;
-}
-.react-calendar__navigation__label {
-    font-size: 1.5rem !important;
-    font-weight: 600 !important;
-    background: #ffffff !important;
-}
-/* for the buttons that navigate the month */
-.react-calendar__navigation__prev-button,
-.react-calendar__navigation__next-button {
-  font-size: 2rem !important;
-}
-/* for the buttons that navigate the year */
-.react-calendar__navigation__prev2-button,
-.react-calendar__navigation__next2-button {
-  font-size: 2rem !important;
-}
-/* mon tues wed...*/
-.react-calendar__month-view__weekdays {
-    margin-top: 0px !important;
-    padding: 0px 14px !important;
-    color: #223349;
-    margin-bottom: 10px !important;
-}
-.react-calendar__month-view__days__day--weekend {
-  color: inherit !important;
-}
-.react-calendar__tile {
-    height: 70px !important;
-    padding: 0px 10px !important;
-}
-.react-calendar__tile:hover {
-  background: #E4E4E4 !important;
-  color: #000 !important;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.react-calendar__tile--now {
-    background: #ffffff !important;
-    color: #000 !important;
-    font-weight: 600 !important;
-}
-.react-calendar__tile--active {
-    border: 2px solid #64B6C8 !important;
-  background: #ffffff !important;
-  color: #000 !important;
-  border-radius: 6px;
-  font-weight: 600;
-}
-.teacher-led {
-    background: #F8FAE6 !important;
-    color: #000 !important;
-}
-.teacher-led.react-calendar__tile--active {
-    border: 2px solid #64B6C8 !important;
-    color: #000 !important;
-}
-.peer-tutored {
-    background: #EBFAE6 !important;
-    color: #000 !important;
-}
-.peer-tutored.react-calendar__tile--active {
-    border: 2px solid #64B6C8 !important;
-    color: #000 !important;
-}
-
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(-20px) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(120vh) rotate(360deg);
-    opacity: 0;
-  }
+a {
+  text-decoration: underline;
+  color: #AD80B5 !important
 }

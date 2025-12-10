@@ -105,7 +105,7 @@ function History() {
       </h1>
       <h2>
         MYASTHENIA GRAVIS:
-        1672 - Thomas Willis first describes Myasthenia Gravis
+          1672 - Thomas Willis first describes Myasthenia Gravis
           1920 - Otto Lewis nerve, discover and identify acetylcholine
         DNA ORAGAMI:
           1959 - Conceptual foundation of nanotechnology by Richard Feynman
@@ -141,32 +141,112 @@ function Impact() {
 
 function Bibliography() {
   const sources = [
-    {citation: "Combes, G. F. et al. (2021, August 21). Nanotechnology in Tumor Biomarker Detection: The Potential of Liganded Nanoclusters as Nonlinear Optical Contrast Agents for Molecular Diagnostics of Cancer. Cancers, 13(16). 10.3390/cancers13164206"},
-    {citation: "Custom-Designed Nanostructures Developed Using DNA Origami. (2024, November 29). Technology Networks. Retrieved December 8, 2025, from https://www.technologynetworks.com/genomics/news/custom-designed-nanostructures-developed-using-dna-origami-393808"},
-    {citation: "Deymeer, F. (2020, November 7). History of Myasthenia Gravis Revisited. Archive of Neuropsychiatry, 58(2), 154-162. https://pmc.ncbi.nlm.nih.gov/articles/PMC8214743/"},
-    {citation: "DNA Robots Find and Tag Blood Cells. (2013, August 7). Columbia University Irving Medical Center. Retrieved December 9, 2025, from https://www.cuimc.columbia.edu/news/dna-robots-find-and-tag-blood-cells"},
-    {citation: "Hair Loss (Alopecia). (2024, December 20). American Cancer Society. Retrieved December 9, 2025, from https://www.cancer.org/cancer/managing-cancer/side-effects/hair-skin-nails/hair-loss/coping-with-hair-loss.html"},
-    {citation: "Kooshesh, K. A. et al. (2023, August 2). Health Consequences of Thymus Removal in Adults. The New England Journal of Medicine, 389(5). DOI: 10.1056/NEJMoa2302892"},
-    {citation: "Myasthenia Gravis (MG). (2025, June). Muscular Dystrophy Association. Retrieved December 9, 2025, from https://www.mda.org/disease/myasthenia-gravis/causes-inheritance"},
-    {citation: "Myasthenia gravis - Symptoms and causes. (2025, August 22). Mayo Clinic. Retrieved December 9, 2025, from https://www.mayoclinic.org/diseases-conditions/myasthenia-gravis/symptoms-causes/syc-20352036"},
-    {citation: "Myasthenia gravis - Treatment. (n.d.). NHS. Retrieved December 8, 2025, from https://www.nhs.uk/conditions/myasthenia-gravis/treatment/"},
-    {citation: "Myasthenia Gravis: What It Is, Causes, Symptoms & Treatment. (2023, 11 10). Cleveland Clinic. Retrieved December 9, 2025, from https://my.clevelandclinic.org/health/diseases/17252-myasthenia-gravis-mg"},
-    {citation: "Ponnuswamy, N. et al. (2017, May 31). Oligolysine-based coating protects DNA nanostructures from low-salt denaturation and nuclease degradation. Nature Communications, 8. https://doi.org/10.1038/ncomms15654"},
-    {citation: "Shigemori, K. (2025, August 7). Plasma Cell Markers. Antibodies.com. Retrieved December 9, 2025, from https://www.antibodies.com/primary-antibodies/cell-markers/immune-cell-markers/plasma-cell-markers"},
-    {citation: "Veneziano, R. et al. (2020, Jun 29). Role of nanoscale antigen organization on B-cell activation probed using DNA origami. Author Manuscript, 15(8), 716-723. 10.1038/s41565-020-0719-0"},
-    {citation: "Yi, J. S. et al. (2017, Sep 30). B cells in the pathophysiology of myasthenia gravis. Author Manuscript, 57(2), 172-184. 10.1002/mus.25973"},
-    {citation: "Zhang, Y. et al. (2023, August 7). Advanced applications of DNA nanostructures dominated by DNA origami in antitumor drug delivery. Frontiers in Molecular Biosciences. 10.3389/fmolb.2023.1239952"}
+    {
+      type: "journal",
+      citation: "Combes, G. F. et al. (2021, August 21). Nanotechnology in Tumor Biomarker Detection: The Potential of Liganded Nanoclusters as Nonlinear Optical Contrast Agents for Molecular Diagnostics of Cancer. Cancers, 13(16). 10.3390/cancers13164206",
+      link: ""
+    },
+    {
+      type: "website",
+      citation: "Custom-Designed Nanostructures Developed Using DNA Origami. (2024, November 29). Technology Networks. Retrieved December 8, 2025, from ",
+      link: "https://www.technologynetworks.com/genomics/news/custom-designed-nanostructures-developed-using-dna-origami-393808"
+    },
+    {
+      type: "journal",
+      citation: "Deymeer, F. (2020, November 7). History of Myasthenia Gravis Revisited. Archive of Neuropsychiatry, 58(2), 154-162. https://pmc.ncbi.nlm.nih.gov/articlesDeymeer, F. (2020, November 7). History of Myasthenia Gravis Revisited. Archive of Neuropsychiatry, 58(2), 154-162. 10.29399/npa.27315/PMC8214743/", 
+      link: ""
+    },
+    {
+      type: "website",
+      citation: "DNA Robots Find and Tag Blood Cells. (2013, August 7). Columbia University Irving Medical Center. Retrieved December 9, 2025, from ",
+      link: "https://www.cuimc.columbia.edu/news/dna-robots-find-and-tag-blood-cells"
+    },
+    {
+      type: "website",
+      citation: "Hair Loss (Alopecia). (2024, December 20). American Cancer Society. Retrieved December 9, 2025, from ",
+      link: "https://www.cancer.org/cancer/managing-cancer/side-effects/hair-skin-nails/hair-loss/coping-with-hair-loss.html"
+    },
+    {
+      type: "journal",
+      citation: "Kooshesh, K. A. et al. (2023, August 2). Health Consequences of Thymus Removal in Adults. The New England Journal of Medicine, 389(5). DOI: 10.1056/NEJMoa2302892",
+      link: ""
+    },
+    {
+      type: "website",
+      citation: "Myasthenia Gravis (MG). (2025, June). Muscular Dystrophy Association. Retrieved December 9, 2025, from ",
+      link: "https://www.mda.org/disease/myasthenia-gravis/causes-inheritance"
+    },
+    {
+      type: "website",
+      citation: "Myasthenia gravis - Symptoms and causes. (2025, August 22). Mayo Clinic. Retrieved December 9, 2025, from ",
+      link: "https://www.mayoclinic.org/diseases-conditions/myasthenia-gravis/symptoms-causes/syc-20352036"
+    },
+    {
+      type: "website",
+      citation: "Myasthenia gravis - Treatment. (n.d.). NHS. Retrieved December 8, 2025, from ",
+      link: "https://www.nhs.uk/conditions/myasthenia-gravis/treatment/"
+    },
+    {
+      type: "website",
+      citation: "Myasthenia Gravis: What It Is, Causes, Symptoms & Treatment. (2023, 11 10). Cleveland Clinic. Retrieved December 9, 2025, from ",
+      link: "https://my.clevelandclinic.org/health/diseases/17252-myasthenia-gravis-mg"
+    },
+    {
+      type: "journal",
+      citation: "Ponnuswamy, N. et al. (2017, May 31). Oligolysine-based coating protects DNA nanostructures from low-salt denaturation and nuclease degradation. Nature Communications, 8. 10.1038/ncomms15654",
+      link: ""
+    },
+    {
+      type: "website",
+      citation: "Shigemori, K. (2025, August 7). Plasma Cell Markers. Antibodies.com. Retrieved December 9, 2025, from ",
+      link: "https://www.antibodies.com/primary-antibodies/cell-markers/immune-cell-markers/plasma-cell-markers"
+    },
+    {
+      type: "journal",
+      citation: "Veneziano, R. et al. (2020, Jun 29). Role of nanoscale antigen organization on B-cell activation probed using DNA origami. Author Manuscript, 15(8), 716-723. 10.1038/s41565-020-0719-0",
+      link: ""
+    },
+    {
+      type: "journal",
+      citation: "Yi, J. S. et al. (2017, Sep 30). B cells in the pathophysiology of myasthenia gravis. Author Manuscript, 57(2), 172-184. 10.1002/mus.25973",
+      link: ""
+    },
+    {
+      type: "journal",
+      citation: "Zhang, Y. et al. (2023, August 7). Advanced applications of DNA nanostructures dominated by DNA origami in antitumor drug delivery. Frontiers in Molecular Biosciences. 10.3389/fmolb.2023.1239952",
+      link: ""
+    }
   ]
   return (
     <div
       className="max-w-5xl mx-auto px-4"
     >
-      <h1 className="text-3xl font-extrabold">
+      <h1
+        className="text-3xl font-extrabold py-6"
+        style={{}}
+      >
         Bibliography
       </h1>
-      <h2>
-        
-      </h2>
+      <div>
+        <ul>
+          {sources.map((source, index) => (
+            <p key={index}
+              className="hanging-indent"
+              style={{ marginBottom: "20px"}}
+            >
+              {source.citation}
+              {source.type == "website" ? 
+                (
+                  <a href={source.link}>{source.link}</a>
+                ) : 
+                (
+                  <p></p>
+                )
+              }
+            </p>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
