@@ -89,6 +89,8 @@ function Home() {
       <h2>
         B-Bots
       </h2>
+      <img src="/AChR.png" alt="" />
+      <img src="DNAOrigami.png" alt="" />
     </div>
   );
 }
