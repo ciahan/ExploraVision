@@ -83,7 +83,7 @@ function Home() {
     <div
       className="max-w-5xl max-w-5xl mx-auto px-4"
     >
-      <h1 className="text-3xl font-extrabold">
+      <h1 className="text-3xl font-extrabold py-6">
         B-Bots
       </h1>
       <h2>
@@ -96,23 +96,47 @@ function Home() {
 }
 
 function History() {
+  const slide1 = () => <div>slide1</div>;
+  const slide2 = () => <div>slide2</div>;
+  const slide3 = () => <div>slide3</div>;
+  const slides = [slide1, slide2, slide3]
+  const Slideshow = ({ slides }) => {
+    const [index, setIndex] = useState(0);
+    const nextSlide = () => {
+      setIndex((prevIndex) =>
+        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+      )
+    };
+    const prevSlide = () => {
+      setIndex((prevIndex) =>
+        prevIndex === 0? slides.length - 1 : prevIndex - 1
+      )
+    };
+    return (
+      <div className = "slideshow-cointainer">
+        <div
+          className = "slides-wrapper"
+          style = {{ transform: `translateX(-${index * 100}%)`}}
+        >
+          {slides.map((slide, index) => (
+            <div>
+              <slide />
+            </div>
+          ))}
+        </div>
+        <a className="prev" onClick={prevSlide}>&#10094;</a>
+        <a className="next" onClick={nextSlide}>&#10095;</a>
+      </div>
+    )
+  }
   return (
     <div
       className="max-w-5xl mx-auto px-4"
     >
-      <h1 className="text-3xl font-extrabold">
+      <h1 className="text-3xl font-extrabold py-6">
         History
       </h1>
-      <h2>
-        MYASTHENIA GRAVIS:
-          1672 - Thomas Willis first describes Myasthenia Gravis
-          1920 - Otto Lewis nerve, discover and identify acetylcholine
-        DNA ORAGAMI:
-          1959 - Conceptual foundation of nanotechnology by Richard Feynman
-          1990 - Scanning Tunneling Microscope (STM) capable of manipulating individual xenon atoms
-          2001 - Molecular motor with nanoscale silicon devices developed by Carlo Montemagno
-          2006 - DNA Origami developed by Paul Ruthemund
-      </h2>
+      <Slideshow slides={slides} />
     </div>
   );
 }
@@ -122,7 +146,7 @@ function OurSolution() {
     <div
       className="max-w-5xl mx-auto px-4"
     >
-      <h1 className="text-3xl font-extrabold">
+      <h1 className="text-3xl font-extrabold py-6">
         Our Solution
       </h1>
     </div>
@@ -132,9 +156,12 @@ function OurSolution() {
 function Impact() {
   return (
     <div className="max-w-5xl mx-auto px-4">
-      <h2 className="text-3xl font-extrabold mb-2" style={{ color: theme.text }}>
+      <h1 className="text-3xl font-extrabold py-6" style={{ color: theme.text }}>
         Impact
-      </h2>
+      </h1>
+      <p>
+        Our goal is for our device to significantly improve the quality-of-life burdens that myasthenia gravis imposes on thoe afflicted with the disease.
+      </p>
     </div>
   );
 }
