@@ -156,7 +156,7 @@ function OurSolution() {
 function Impact() {
   return (
     <div className="max-w-5xl mx-auto px-4">
-      <h1 className="text-3xl font-extrabold py-6" style={{ color: theme.text }}>
+      <h1 className="text-3xl font-extrabold py-6" style={{ color: theme.darkPurple }}>
         Impact
       </h1>
       <p>
@@ -250,7 +250,7 @@ function Bibliography() {
     >
       <h1
         className="text-3xl font-extrabold py-6"
-        style={{}}
+        style={{ color: theme.darkPurple }}
       >
         Bibliography
       </h1>
@@ -259,7 +259,7 @@ function Bibliography() {
           {sources.map((source, index) => (
             <p key={index}
               className="hanging-indent"
-              style={{ marginBottom: "20px"}}
+              style={{ marginBottom: "20px", color: theme.darkPurple }}
             >
               {source.citation}
               {source.type == "website" ? 
