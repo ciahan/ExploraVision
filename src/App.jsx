@@ -89,40 +89,42 @@ function Home() {
   );
 }
 
+const Slideshow = ({ slides }) => {
+  const [index, setIndex] = useState(0);
+  const nextSlide = () => {
+    setIndex((prevIndex) =>
+      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+    )
+  };
+  const prevSlide = () => {
+    setIndex((prevIndex) =>
+      prevIndex === 0? slides.length - 1 : prevIndex - 1
+    )
+  };
+  return (
+    <div className = "slideshow-container">
+      <div
+        className = "slides-wrapper"
+        style = {{ transform: `translateX(-${index * 100}%)`}}
+      >
+        {slides.map((Slide, index) => (
+          <div className="slide-page">
+            <Slide />
+          </div>
+        ))}
+      </div>
+      <div className="prev" onClick={prevSlide}>&#10094;</div>
+      <div className="next" onClick={nextSlide}>&#10095;</div>
+    </div>
+  )
+}
+
 function History() {
   const slide1 = () => <div class="main-content-div">slide1</div>;
   const slide2 = () => <div>slide2</div>;
   const slide3 = () => <div>slide3</div>;
   const slides = [slide1, slide2, slide3]
-  const Slideshow = ({ slides }) => {
-    const [index, setIndex] = useState(0);
-    const nextSlide = () => {
-      setIndex((prevIndex) =>
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-      )
-    };
-    const prevSlide = () => {
-      setIndex((prevIndex) =>
-        prevIndex === 0? slides.length - 1 : prevIndex - 1
-      )
-    };
-    return (
-      <div className = "slideshow-container">
-        <div
-          className = "slides-wrapper"
-          style = {{ transform: `translateX(-${index * 100}%)`}}
-        >
-          {slides.map((Slide, index) => (
-            <div className="slide-page" style={{ backgroundColor: theme.darkPurple }}>
-              <Slide />
-            </div>
-          ))}
-        </div>
-        <a className="prev" onClick={prevSlide}>&#10094;</a>
-        <a className="next" onClick={nextSlide}>&#10095;</a>
-      </div>
-    )
-  }
+  
   return (
     <div>
       <Slideshow slides={slides} />
@@ -131,6 +133,38 @@ function History() {
 }
 
 function TheProblem() {
+  const pyridostigmine = () =>
+    <div
+      className = "p-10 px-20 flex gap-9"
+    >
+      <div className="flex items-center">
+        <img src="/pyridostigmine.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
+      </div>
+      <div className = "space-y-5">
+        <h1>
+          Pyridostigmine
+        </h1>
+        <div className="space-y-4">
+          <p>
+            Works by increasing the level of ACh in the body. Pridostigmine prevents breakdown of ACh in the neuromuscular junction.
+          </p>
+          <p>
+            Side effects:
+            <ul className="list-disc pl-10">
+              <li> Stomach cramps </li>
+              <li> Diarrhea </li>
+              <li> Muscle twitching </li>
+              <li> Nausea </li>
+            </ul>
+          </p>
+          <p>
+            The effects of the medecine are also short-lived, lasting only a few hours are requiring patients to take the medication multiple times a day.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  const slides = [pyridostigmine]
   return(
     <div
       className="max-w-5xl mx-auto px-4"
@@ -149,32 +183,10 @@ function TheProblem() {
           </p>
         </div>
         <div
-          className = "p-10 flex gap-9 rounded-3xl"
-          style = {{ backgroundColor: theme.purple }}
+          className = "rounded-3xl overflow-hidden"
+          style = {{ backgroundColor: theme.purple, height: '550px'}}
         >
-          <img src="/pyridostigmine.png" alt="pyridostigmine" />
-          <div className = "space-y-5">
-            <h1>
-              Pyridostigmine
-            </h1>
-            <div className="space-y-4">
-              <p>
-                Works by increasing the level of ACh in the body. Pridostigmine prevents breakdown of ACh in the neuromuscular junction.
-              </p>
-              <p>
-                Side effects:
-                <ul className="list-disc pl-10">
-                  <li> Stomach cramps </li>
-                  <li> Diarrhea </li>
-                  <li> Muscle twitching </li>
-                  <li> Nausea </li>
-                </ul>
-              </p>
-              <p>
-                The effects of the medecine are also short-lived, lasting only a few hours are requiring patients to take the medication multiple times a day.
-              </p>
-            </div>
-          </div>
+          <Slideshow slides = {slides}/>
         </div>
       </div>
     </div>
