@@ -134,16 +134,26 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
 function Home() {
   return (
     <div
-      className="max-w-5xl max-w-5xl mx-auto px-4"
+      className="max-w-5xl mx-auto px-4"
     >
+      <h1 className="py-5">B-Bots</h1>
+      <h2 pt-5>Mysthenia Gravis is caused by an overactive Thymus that produces an excess of antibodies. These specific antibodies inhibit acetylcholine from binding to their receptors, impairing muscle function</h2>
+      <h2 className="pt-10">Diagram of the Acetylcholine Mechanism that is inhibited by specific antibodies:</h2>
+      <img className="pt-5" src="/AChR.png" alt="" />
       <h1 className="text-3xl font-extrabold py-6">
-        B-Bots
+        Nanotechnology expanded. 
       </h1>
-      <h2>
-        B-Bots
+
+      <h2 className="pt-5">
+      
+      Our B-Bots are DNA Origami nanobots that can recognize specific B-cells. The nanobots then release molecules incapsuled in the DNA package to induce apoptosis.
+
+
       </h2>
-      <img src="/AChR.png" alt="" />
-      <img src="DNAOrigami.png" alt="" />
+
+      <h2>They induce apoptosis into these cells </h2>
+      
+      
     </div>
   );
 }
@@ -169,7 +179,7 @@ function HistoryNano() {
         <h1 class="text-6xl">
           Scanning Tunneling Microscope (STM) capable of manipulating individual xenon atoms
         </h1>
-        <img class="p-5" src="IBM_in_atoms.gif" alt="" />
+        <img class="p-5 size-100" src="IBM_in_atoms.gif" alt="" />
       </div>
     </div>;
 
@@ -211,11 +221,18 @@ function HistoryMG() {
     <div className="flex flex-col justify-center items-center">
     <h1 class="text-6xl p-10">1672</h1>
     <h1 class=" text-6xl p-5">First Clinical Description</h1>
-    <p class="text-m">The historical record of MG begins with Thomas Willis, a famous English physician.
-Significance: Willis provided the first account of a patient with fluctuating muscle weakness that recovered after rest.
-Early Case: He specifically described a woman who temporarily lost her power of speech, becoming "mute as a fish".
-Impact: While highly accurate, this account was largely unnoticed in medical literature until 1903.</p>
-    <img class="p-5" src="Healthline_7-Common-Symptoms-of-H51Myasthenia-Gravis_1296x1740.png.avif" alt="" />
+    <div class="text-m px-35">
+    <p>The historical record of MG begins with Thomas Willis, a famous English physician.</p>
+      <p>Significance: Willis provided the first account of a patient with fluctuating muscle weakness that recovered after rest.</p>
+      <p>Early Case: He specifically described a woman who temporarily lost her power of speech, becoming "mute as a fish".</p>
+      <p>Impact: While highly accurate, this account was largely unnoticed in medical literature until 1903.</p>
+    </div>
+    
+
+
+
+
+    <img class="p-5 size-60" src="Healthline_7-Common-Symptoms-of-H51Myasthenia-Gravis_1296x1740.png.avif" alt="" />
     </div>
   
   </div>;
@@ -223,7 +240,7 @@ Impact: While highly accurate, this account was largely unnoticed in medical lit
   <div className="flex flex-col justify-center items-center">
   <h1 class="text-6xl p-10">1895</h1>
   <h1 class=" text-6xl p-5">The Naming of Myasthenia Gravis</h1>
-  <p class="text-m">In the late 19th century, German physicians formalized the condition as a distinct medical entity.
+  <p class="text-m px-35">In the late 19th century, German physicians formalized the condition as a distinct medical entity.
 Significance: Friedrich Jolly coined the term "myasthenia gravis pseudoparalytica".
 Etymology: The name combined the Greek mya (muscle) and asthenia (weakness) with the Latin gravis (severe).
 Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel Goldflam (1893), which were previously known as the "Erb-Goldflam symptom complex".
@@ -236,7 +253,7 @@ Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel G
   <div className="flex flex-col justify-center items-center">
   <h1 class="text-6xl p-10">1934</h1>
   <h1 class=" text-6xl p-5">The "Miracle at St. Alfege's"</h1>
-  <p class="text-m">reatment for MG was virtually non-existent until a major breakthrough by Mary Broadfoot Walker.
+  <p class="text-m px-35">reatment for MG was virtually non-existent until a major breakthrough by Mary Broadfoot Walker.
 Significance: Walker recognized that MG symptoms resembled curare poisoning and successfully treated a patient using physostigmine, a cholinesterase inhibitor.
 Discovery: This trial proved that the symptoms could be promptly improved by pharmacological intervention.
 Outcome: Her work established the first effective treatment for the disease and led to the widespread use of acetylcholinesterase inhibitors.
@@ -251,7 +268,7 @@ const slide4 = () => <div className="h-screen w-screen" style={{ backgroundColor
 <h1 class="text-6xl p-10">1960</h1>
 <h1 class=" text-6xl p-5">Establishing the Autoimmune Theory
 </h1>
-<p class="text-m">While researchers suspected an immune link for decades, the 1960s marked the definitive shift toward understanding MG's true cause.
+<p class="text-m px-35">While researchers suspected an immune link for decades, the 1960s marked the definitive shift toward understanding MG's true cause.
 Significance: John Simpson proposed that MG was an autoimmune disease caused by antibodies blocking nerve signaling at the motor end plate.
 Scientific Proof: His hypothesis, alongside work by Nastuk, was later confirmed in 1973 by Patrick and Lindstrom, who demonstrated that an autoimmune response against acetylcholine receptors caused MG-like weakness in rabbits.
 Legacy: This discovery revolutionized management, leading to the use of immunosuppressants, corticosteroids, and plasma exchange as standard therapies.
@@ -263,35 +280,7 @@ Legacy: This discovery revolutionized management, leading to the use of immunosu
 
 </div>;
   const slides = [slide1, slide2, slide3, slide4]
-  const Slideshow = ({ slides }) => {
-    const [index, setIndex] = useState(0);
-    const nextSlide = () => {
-      setIndex((prevIndex) =>
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-      )
-    };
-    const prevSlide = () => {
-      setIndex((prevIndex) =>
-        prevIndex === 0? slides.length - 1 : prevIndex - 1
-      )
-    };
-    return (
-      <div className = "slideshow-container">
-        <div
-          className = "slides-wrapper"
-          style = {{ transform: `translateX(-${index * 100}%)`}}
-        >
-          {slides.map((Slide, index) => (
-            <div className="slide-page" style={{ backgroundColor: theme.darkPurple }}>
-              <Slide />
-            </div>
-          ))}
-        </div>
-        <a className="prev" onClick={prevSlide}>&#10094;</a>
-        <a className="next" onClick={nextSlide}>&#10095;</a>
-      </div>
-    )
-  }
+  
   return (
     <div>
       <Slideshow slides={slides} />
@@ -328,7 +317,7 @@ function TheProblem() {
             </ul>
           </p>
           <p>
-            The effects of the medecine are also short-lived, lasting only a few hours are requiring patients to take the medication multiple times a day.
+            The effects of the medicine are also short-lived, lasting only a few hours and requiring patients to take the medication multiple times a day.
           </p>
         </div>
       </div>
@@ -366,14 +355,14 @@ function TheProblem() {
 function OurSolution() {
   return(
     <div
-      className="max-w-5xl mx-auto px-4 w-screen h-screen flex flex-col justify-center items-center"
+      className="max-w-5xl mx-auto px-4 w-screen h-screen "
     >
-      <h1 className="text-3xl font-extrabold">
+      <h1 className="text-3xl font-extrabold py-6">
         Our Solution
       </h1>
       <p className="text-m">Our B-Bots, made using DNA Origami, will target B-Cells that produce acetylcholine receptor (AChR) antibodies </p>
-      <p className="text-m">The Nanobots will destroy these B-Cells by inducing apoptosis</p>
-      <img className="p-5" src="DNAOrigami.png" alt="" />
+      <p className="text-m pb-5">The Nanobots will destroy these B-Cells by inducing apoptosis</p>
+      <img className="" src="DNAOrigami.png" alt="" />
     </div>
   )
 }
