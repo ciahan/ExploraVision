@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import "react-calendar/dist/Calendar.css";
+import { link } from "framer-motion/client";
 
 function usePoppins() {
   useEffect(() => {
@@ -30,7 +30,7 @@ const theme = {
   lightPurple: "#F9F7FF"
 };
 
-function Header({ onHome, onHistory, onOurSolution, onImpact, onBibliography }) {
+function Header({ onHome, onHistory, onTheProblem, onOurSolution, onImpact, onBibliography }) {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -53,6 +53,9 @@ function Header({ onHome, onHistory, onOurSolution, onImpact, onBibliography }) 
           </button>
           <button className={link} style={{ color: theme.darkPurple }} onClick={onHistory}>
             History
+          </button>
+          <button className={link} style={{ color: theme.darkPurple }} onClick={onTheProblem}>
+            The Problem
           </button>
           <button className={link} style={{ color: theme.darkPurple }} onClick={onOurSolution}>
             Our Solution
@@ -96,7 +99,7 @@ function Home() {
 }
 
 function History() {
-  const slide1 = () => <div>slide1</div>;
+  const slide1 = () => <div class="main-content-div">slide1</div>;
   const slide2 = () => <div>slide2</div>;
   const slide3 = () => <div>slide3</div>;
   const slides = [slide1, slide2, slide3]
@@ -113,14 +116,14 @@ function History() {
       )
     };
     return (
-      <div className = "slideshow-cointainer">
+      <div className = "slideshow-container">
         <div
           className = "slides-wrapper"
           style = {{ transform: `translateX(-${index * 100}%)`}}
         >
-          {slides.map((slide, index) => (
-            <div>
-              <slide />
+          {slides.map((Slide, index) => (
+            <div className="slide-page" style={{ backgroundColor: theme.darkPurple }}>
+              <Slide />
             </div>
           ))}
         </div>
@@ -130,15 +133,22 @@ function History() {
     )
   }
   return (
+    <div>
+      <Slideshow slides={slides} />
+    </div>
+  );
+}
+
+function TheProblem() {
+  return(
     <div
       className="max-w-5xl mx-auto px-4"
     >
       <h1 className="text-3xl font-extrabold py-6">
-        History
+        The Problem
       </h1>
-      <Slideshow slides={slides} />
     </div>
-  );
+  )
 }
 
 function OurSolution() {
@@ -160,7 +170,7 @@ function Impact() {
         Impact
       </h1>
       <p>
-        Our goal is for our device to significantly improve the quality-of-life burdens that myasthenia gravis imposes on thoe afflicted with the disease.
+        Our goal is for our device to significantly improve the quality-of-life burdens that myasthenia gravis imposes on those afflicted with the disease.
       </p>
     </div>
   );
@@ -168,6 +178,11 @@ function Impact() {
 
 function Bibliography() {
   const sources = [
+    {
+      type: "journal",
+      citation: "Arvidsson, R. et al. (2020, August 27). Environmental and health risks of nanorobots: an early review. Environmental Science: Nano, 7, 2875-2886. 10.1039/D0EN00570C",
+      link: ""
+    },
     {
       type: "journal",
       citation: "Combes, G. F. et al. (2021, August 21). Nanotechnology in Tumor Biomarker Detection: The Potential of Liganded Nanoclusters as Nonlinear Optical Contrast Agents for Molecular Diagnostics of Cancer. Cancers, 13(16). 10.3390/cancers13164206",
@@ -192,6 +207,11 @@ function Bibliography() {
       type: "website",
       citation: "Hair Loss (Alopecia). (2024, December 20). American Cancer Society. Retrieved December 9, 2025, from ",
       link: "https://www.cancer.org/cancer/managing-cancer/side-effects/hair-skin-nails/hair-loss/coping-with-hair-loss.html"
+    },
+    {
+      type: "website",
+      citation: "How RITUXAN is Thought to Work. (n.d.). Rituxan. Retrieved December 11, 2025, from ",
+      link: "https://www.rituxan.com/nhl/about-rituxan/how-it-works.html"
     },
     {
       type: "journal",
@@ -299,25 +319,25 @@ useEffect(() => {
         backgroundColor: theme.lightPurple 
       }}
     >
-    <Header
-      onHome={() => setPage({ name: "home" })}
-      onHistory={() => setPage({ name: "history" })}
-      onOurSolution={() => setPage({ name: "our solution" })}
-      onImpact={() => setPage({ name: "impact" })}
-      onBibliography={() => {
-        setPadVisible(true);
-        setPage({ name: "bibliography" });
-      }}
-    />
+      <Header
+        onHome={() => setPage({ name: "home" })}
+        onHistory={() => setPage({ name: "history" })}
+        onTheProblem={() => setPage({ name: "the problem" })}
+        onOurSolution={() => setPage({ name: "our solution" })}
+        onImpact={() => setPage({ name: "impact" })}
+        onBibliography={() => {
+          setPadVisible(true);
+          setPage({ name: "bibliography" });
+        }}
+      />
 
-      <main className="pt-3 pb-10">
-        {page.name === "home" && (
-          <Home/>
-        )}
-      {page.name === "history" && <History />}
-      {page.name === "our solution" && <OurSolution />}
-      {page.name === "impact" && <Impact />}
-      {page.name === "bibliography" && <Bibliography/>}
+      <main className="pt-0 pb-0">
+        {page.name === "home" && <Home/>}
+        {page.name === "history" && <History />}
+        {page.name === "the problem" && <TheProblem />}
+        {page.name === "our solution" && <OurSolution />}
+        {page.name === "impact" && <Impact />}
+        {page.name === "bibliography" && <Bibliography/>}
       </main>
     </div>
   );
