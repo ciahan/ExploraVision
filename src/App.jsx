@@ -236,7 +236,38 @@ function TheProblem() {
         </div>
       </div>
     </div>
-  const slides = [pyridostigmine]
+  const rituximab = () =>
+    <div
+      className = "p-10 px-20 flex gap-9"
+    >
+      <div className="flex items-center">
+        <img src="/rituximab.png" alt="pyridostigmine" className="w-[600px] h-auto"/>
+      </div>
+      <div className = "space-y-5">
+        <h1>
+          Rituximab
+        </h1>
+        <div className="space-y-4">
+          <p>
+            Uses the CD20 protein found on the surface of B-cells to identify and destroy them.
+          </p>
+          <p>
+            Side effects:
+            <ul className="list-disc pl-10">
+              <li> Lower blood cell counts </li>
+              <li> Risk of serious infection </li>
+              <li> Heart problems </li>
+              <li> Kidney issues </li>
+            </ul>
+          </p>
+          <p>
+            In killing B-cells, Rituximab lowers the immune system's capacity to fight off infections.
+            Additionally, the medicine may also attack healthy cells.
+          </p>
+        </div>
+      </div>
+    </div>
+  const slides = [pyridostigmine, rituximab]
   
   return(
     <div
@@ -299,6 +330,11 @@ function Bibliography() {
       link: ""
     },
     {
+      type: "website",
+      citation: "Chang, K. (2000, November 25). Scientists Make a Bacteria-Size Machine Work. The New York Times. ",
+      link: "https://www.nytimes.com/2000/11/25/us/scientists-make-a-bacteria-size-machine-work.html"
+    },
+    {
       type: "journal",
       citation: "Combes, G. F. et al. (2021, August 21). Nanotechnology in Tumor Biomarker Detection: The Potential of Liganded Nanoclusters as Nonlinear Optical Contrast Agents for Molecular Diagnostics of Cancer. Cancers, 13(16). 10.3390/cancers13164206",
       link: ""
@@ -352,6 +388,11 @@ function Bibliography() {
       type: "website",
       citation: "Myasthenia Gravis: What It Is, Causes, Symptoms & Treatment. (2023, 11 10). Cleveland Clinic. Retrieved December 9, 2025, from ",
       link: "https://my.clevelandclinic.org/health/diseases/17252-myasthenia-gravis-mg"
+    },
+    {
+      type: "journal",
+      citation: "Pearce, J. (2005). Mary Broadfoot Walker (1888-1974): a historic discovery in myasthenia gravis. European Neurology, 51(3). 10.1159/000084268",
+      link: ""
     },
     {
       type: "journal",
