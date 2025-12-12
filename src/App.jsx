@@ -30,6 +30,36 @@ const theme = {
   lightPurple: "#F9F7FF"
 };
 
+const Slideshow = ({ slides }) => {
+  const [index, setIndex] = useState(0);
+  const nextSlide = () => {
+    setIndex((prevIndex) =>
+      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+    )
+  };
+  const prevSlide = () => {
+    setIndex((prevIndex) =>
+      prevIndex === 0? slides.length - 1 : prevIndex - 1
+    )
+  };
+  return (
+    <div className = "slideshow-container">
+      <div
+        className = "slides-wrapper"
+        style = {{ transform: `translateX(-${index * 100}%)`}}
+      >
+        {slides.map((Slide, index) => (
+          <div className="slide-page">
+            <Slide />
+          </div>
+        ))}
+      </div>
+      <div className="prev" onClick={prevSlide}>&#10094;</div>
+      <div className="next" onClick={nextSlide}>&#10095;</div>
+    </div>
+  )
+}
+
 function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolution, onImpact, onBibliography }) {
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -42,16 +72,15 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
 
   const link =
     "cursor-pointer text-base font-semibold hover:underline underline-offset-[6px] focus-visible:underline focus:outline-none transition-all duration-300 ease-in-out";
-
   const dropdownItemStyle = 
     "cursor-pointer block w-full text-left px-4 py-2 text-sm font-medium hover:bg-opacity-20 transition-colors hover:underline underline-offset-[6px] focus-visible:underline focus:outline-none transition-all duration-300 ease-in-out";
-  return (
+  
+    return (
     <div
       className={`sticky top-0 z-10 backdrop-blur transition-all ${scrolled ? "shadow-sm" : ""}`}
       style={{ background: theme.pink}}
     >
-      <div className="h-20 max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between py-3">
-        <div className="flex items-center gap-5">
+      <div className="h-20 max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-10 py-3">
           <button className={link} style={{ color: theme.darkPurple }} onClick={onHome}>
             Home
           </button>
@@ -60,31 +89,30 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-          <button className={link} style={{ color: theme.darkPurple }}>
-            History <span className="text-xs ml-1">▼</span>
+          <button className="font-semibold cursor-pointer" style={{ color: theme.darkPurple }}>
+            History
           </button>
-          {dropdownOpen && (
+            {dropdownOpen && (
               <div 
-                className="absolute left-0 mt-0 w-48 rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 z-30"
-                style={{ backgroundColor: theme.lightPurple }}
+                className="rounded-sm absolute left-0 mt-0- w-48 py-1 z-30"
+                style={{ backgroundColor: theme.pink }}
               >
                 <button
                   onClick={() => { onHistoryMG(); setDropdownOpen(false); }}
-                  className={dropdownItemStyle}
+                  className={`${dropdownItemStyle} mt-3`}
                   style={{ color: theme.darkPurple, hover: { backgroundColor: theme.purple } }}
                 >
                   Myasthenia Gravis
                 </button>
                 <button
                   onClick={() => { onHistoryNano(); setDropdownOpen(false); }}
-                  className={dropdownItemStyle}
+                  className={`${dropdownItemStyle} mb-2`}
                   style={{ color: theme.darkPurple }}
                 >
                   Nanotechnology
                 </button>
               </div>
             )}
-          </div>
           </div>
           <button className={link} style={{ color: theme.darkPurple }} onClick={onTheProblem}>
             The Problem
@@ -120,111 +148,56 @@ function Home() {
   );
 }
 
-const Slideshow = ({ slides }) => {
-  const [index, setIndex] = useState(0);
-  const nextSlide = () => {
-    setIndex((prevIndex) =>
-      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-    )
-  };
-  const prevSlide = () => {
-    setIndex((prevIndex) =>
-      prevIndex === 0? slides.length - 1 : prevIndex - 1
-    )
-  };
-  return (
-    <div className = "slideshow-container">
-      <div
-        className = "slides-wrapper"
-        style = {{ transform: `translateX(-${index * 100}%)`}}
-      >
-        {slides.map((Slide, index) => (
-          <div className="slide-page">
-            <Slide />
-          </div>
-        ))}
-      </div>
-      <div className="prev" onClick={prevSlide}>&#10094;</div>
-      <div className="next" onClick={nextSlide}>&#10095;</div>
-    </div>
-  )
-}
+
 
 function HistoryNano() {
   const slide1 = () => 
-  <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
-    <div className="flex flex-col justify-center items-center">
-    <h1 class="text-6xl p-10">1959</h1>
-    <h1 class=" text-6xl p-5">Nanotechnology</h1>
-    <h1 class="text-6xl">Conceptual foundation by Richard Feynman</h1>
-    <img class="p-5" src="newman-lab_xlk90v.webp" alt="" />
-    </div>
-  
-  </div>;
-  const slide2 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
-  <div className="flex flex-col justify-center items-center">
-  <h1 class="text-6xl p-10">1990</h1>
-  <h1 class=" text-6xl p-5">STM</h1>
-  <h1 class="text-6xl">Scanning Tunneling Microscope (STM) capable of manipulating individual xenon atoms
-</h1>
-  <img class="p-5" src="IBM_in_atoms.gif" alt="" />
-  </div>
-
-</div>;
-  const slide3 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
-  <div className="flex flex-col justify-center items-center">
-  <h1 class="text-6xl p-10">2001</h1>
-  <h1 class=" text-6xl p-5">Nanomachines</h1>
-  <h1 class="text-6xl">Molecular motor with nanoscale silicon devices by Carlo Montemagno
-
-</h1>
-  <img class="p-5" src="CMFig1.72.jpg" alt="" />
-  </div>
-
-</div>;
-const slide4 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
-<div className="flex flex-col justify-center items-center">
-<h1 class="text-6xl p-10">2006</h1>
-<h1 class=" text-6xl p-5">DNA Origami
-</h1>
-<h1 class="text-6xl">Developed by Paul Rothemund
-
-
-</h1>
-<img class="p-5" src="DNAOrgi.jpeg" alt="" />
-</div>
-
-</div>;
-  const slides = [slide1, slide2, slide3, slide4]
-  const Slideshow = ({ slides }) => {
-    const [index, setIndex] = useState(0);
-    const nextSlide = () => {
-      setIndex((prevIndex) =>
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-      )
-    };
-    const prevSlide = () => {
-      setIndex((prevIndex) =>
-        prevIndex === 0? slides.length - 1 : prevIndex - 1
-      )
-    };
-    return (
-      <div className = "slideshow-container">
-        <div
-          className = "slides-wrapper"
-          style = {{ transform: `translateX(-${index * 100}%)`}}
-        >
-          {slides.map((Slide, index) => (
-            <div className="slide-page" style={{ backgroundColor: theme.darkPurple }}>
-              <Slide />
-            </div>
-          ))}
-        </div>
-        <a className="prev" onClick={prevSlide}>&#10094;</a>
-        <a className="next" onClick={nextSlide}>&#10095;</a>
+    <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+      <div className="flex flex-col justify-center items-center">
+      <h1 class="text-6xl p-10">1959</h1>
+      <h1 class=" text-6xl p-5">Nanotechnology</h1>
+      <h1 class="text-6xl">Conceptual foundation by Richard Feynman</h1>
+      <img class="p-5" src="newman-lab_xlk90v.webp" alt="" />
       </div>
-    )
-  }
+    </div>;
+
+  const slide2 = () =>
+    <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+      <div className="flex flex-col justify-center items-center">
+        <h1 class="text-6xl p-10">1990</h1>
+        <h1 class=" text-6xl p-5">STM</h1>
+        <h1 class="text-6xl">
+          Scanning Tunneling Microscope (STM) capable of manipulating individual xenon atoms
+        </h1>
+        <img class="p-5" src="IBM_in_atoms.gif" alt="" />
+      </div>
+    </div>;
+
+  const slide3 = () =>
+    <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+      <div className="flex flex-col justify-center items-center">
+        <h1 class="text-6xl p-10">2001</h1>
+        <h1 class=" text-6xl p-5">Nanomachines</h1>
+        <h1 class="text-6xl">Molecular motor with nanoscale silicon devices by Carlo Montemagno
+        </h1>
+        <img class="p-5" src="CMFig1.72.jpg" alt="" />
+      </div>
+    </div>;
+
+  const slide4 = () =>
+    <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+      <div className="flex flex-col justify-center items-center">
+        <h1 class="text-6xl p-10">2006</h1>
+        <h1 class=" text-6xl p-5">DNA Origami
+        </h1>
+        <h1 class="text-6xl">Developed by Paul Rothemund
+        </h1>
+        <img class="p-5" src="DNAOrgi.jpeg" alt="" />
+      </div>
+    </div>;
+
+  const slides = [slide1, slide2, slide3, slide4]
+
   return (
     <div>
       <Slideshow slides={slides} />
@@ -360,8 +333,8 @@ function TheProblem() {
         </div>
       </div>
     </div>
-
   const slides = [pyridostigmine]
+  
   return(
     <div
       className="max-w-5xl mx-auto px-4"
@@ -381,7 +354,7 @@ function TheProblem() {
         </div>
         <div
           className = "rounded-3xl overflow-hidden"
-          style = {{ backgroundColor: theme.purple, height: '550px'}}
+          style = {{ backgroundColor: theme.purple, height: '500px'}}
         >
           <Slideshow slides = {slides}/>
         </div>
