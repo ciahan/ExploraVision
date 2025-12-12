@@ -322,7 +322,68 @@ function TheProblem() {
         </div>
       </div>
     </div>
-  const slides = [pyridostigmine]
+    const prednisone = () =>
+    <div
+      className = "p-10 px-20 flex gap-9"
+    >
+      <div className="flex items-center">
+        <img src="public/Prednisone-removebg-preview.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
+      </div>
+      <div className = "space-y-5">
+        <h1>
+          Prednisone
+        </h1>
+        <div className="space-y-4">
+          <p>
+            Works by mimicing the effects of cortisol, a natural hormone produced by the adrenal glands. This significantly reduces the activity of the immune system.
+          </p>
+          <p>
+            Side effects:
+            <ul className="list-disc pl-10">
+              <li> Weight Gain </li>
+              <li> Sleep disturbances </li>
+              <li> Mood and behavioral changes </li>
+              <li> Gastrointestinal issues </li>
+              <li> Osteoporosis/bone issues</li>
+            </ul>
+          </p>
+          <p>
+            The effects of the medicine initally can also worsen sypmtoms enough to require hospitalization or respiratory support.
+          </p>
+        </div>
+      </div>
+    </div>
+    const thymectomy = () =>
+    <div
+      className = "p-10 px-20 flex gap-9"
+    >
+      <div className="flex items-center">
+        <img src="/thymus.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
+      </div>
+      <div className = "space-y-5">
+        <h1>
+          Thymectomy
+        </h1>
+        <div className="space-y-4">
+          <p>
+            Surgical removal of the thymus gland, performed through traditional open surgery or minimally invasive techniques (like VATS or robotic)
+          </p>
+          <p>
+            Side effects:
+            <ul className="list-disc pl-10">
+              <li> Infection and Breathing Issues </li>
+              <li> Bleeding </li>
+              <li> Tissue Damage </li>
+              <li> Myasthenic Crisis </li>
+            </ul>
+          </p>
+          <p>
+            Long term effects of this surgery have been debated, but include potential increased risks for other autoimmune diseases, cancers, and infections.
+          </p>
+        </div>
+      </div>
+    </div>
+  const slides = [pyridostigmine, prednisone, thymectomy]
   
   return(
     <div
