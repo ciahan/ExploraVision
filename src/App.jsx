@@ -47,7 +47,7 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
     "cursor-pointer block w-full text-left px-4 py-2 text-sm font-medium hover:bg-opacity-20 transition-colors hover:underline underline-offset-[6px] focus-visible:underline focus:outline-none transition-all duration-300 ease-in-out";
   return (
     <div
-      className={`sticky top-0 z-50 backdrop-blur transition-all ${scrolled ? "shadow-sm" : ""}`}
+      className={`sticky top-0 z-10 backdrop-blur transition-all ${scrolled ? "shadow-sm" : ""}`}
       style={{ background: theme.pink}}
     >
       <div className="h-20 max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between py-3">
@@ -150,7 +150,7 @@ const Slideshow = ({ slides }) => {
   )
 }
 
-function History() {
+function HistoryNano() {
   const slide1 = () => 
   <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
     <div className="flex flex-col justify-center items-center">
@@ -232,6 +232,103 @@ const slide4 = () => <div className="h-screen w-screen" style={{ backgroundColor
   );
 }
 
+function HistoryMG() {
+  const slide1 = () => 
+  <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+    <div className="flex flex-col justify-center items-center">
+    <h1 class="text-6xl p-10">1672</h1>
+    <h1 class=" text-6xl p-5">First Clinical Description</h1>
+    <p class="text-m">The historical record of MG begins with Thomas Willis, a famous English physician.
+Significance: Willis provided the first account of a patient with fluctuating muscle weakness that recovered after rest.
+Early Case: He specifically described a woman who temporarily lost her power of speech, becoming "mute as a fish".
+Impact: While highly accurate, this account was largely unnoticed in medical literature until 1903.</p>
+    <img class="p-5" src="Healthline_7-Common-Symptoms-of-H51Myasthenia-Gravis_1296x1740.png.avif" alt="" />
+    </div>
+  
+  </div>;
+  const slide2 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+  <div className="flex flex-col justify-center items-center">
+  <h1 class="text-6xl p-10">1895</h1>
+  <h1 class=" text-6xl p-5">The Naming of Myasthenia Gravis</h1>
+  <p class="text-m">In the late 19th century, German physicians formalized the condition as a distinct medical entity.
+Significance: Friedrich Jolly coined the term "myasthenia gravis pseudoparalytica".
+Etymology: The name combined the Greek mya (muscle) and asthenia (weakness) with the Latin gravis (severe).
+Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel Goldflam (1893), which were previously known as the "Erb-Goldflam symptom complex".
+</p>
+  
+  </div>
+
+</div>;
+  const slide3 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+  <div className="flex flex-col justify-center items-center">
+  <h1 class="text-6xl p-10">1934</h1>
+  <h1 class=" text-6xl p-5">The "Miracle at St. Alfege's"</h1>
+  <p class="text-m">reatment for MG was virtually non-existent until a major breakthrough by Mary Broadfoot Walker.
+Significance: Walker recognized that MG symptoms resembled curare poisoning and successfully treated a patient using physostigmine, a cholinesterase inhibitor.
+Discovery: This trial proved that the symptoms could be promptly improved by pharmacological intervention.
+Outcome: Her work established the first effective treatment for the disease and led to the widespread use of acetylcholinesterase inhibitors.
+
+</p>
+  
+  </div>
+
+</div>;
+const slide4 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+<div className="flex flex-col justify-center items-center">
+<h1 class="text-6xl p-10">1960</h1>
+<h1 class=" text-6xl p-5">Establishing the Autoimmune Theory
+</h1>
+<p class="text-m">While researchers suspected an immune link for decades, the 1960s marked the definitive shift toward understanding MG's true cause.
+Significance: John Simpson proposed that MG was an autoimmune disease caused by antibodies blocking nerve signaling at the motor end plate.
+Scientific Proof: His hypothesis, alongside work by Nastuk, was later confirmed in 1973 by Patrick and Lindstrom, who demonstrated that an autoimmune response against acetylcholine receptors caused MG-like weakness in rabbits.
+Legacy: This discovery revolutionized management, leading to the use of immunosuppressants, corticosteroids, and plasma exchange as standard therapies.
+
+
+</p>
+
+</div>
+
+</div>;
+  const slides = [slide1, slide2, slide3, slide4]
+  const Slideshow = ({ slides }) => {
+    const [index, setIndex] = useState(0);
+    const nextSlide = () => {
+      setIndex((prevIndex) =>
+        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+      )
+    };
+    const prevSlide = () => {
+      setIndex((prevIndex) =>
+        prevIndex === 0? slides.length - 1 : prevIndex - 1
+      )
+    };
+    return (
+      <div className = "slideshow-container">
+        <div
+          className = "slides-wrapper"
+          style = {{ transform: `translateX(-${index * 100}%)`}}
+        >
+          {slides.map((Slide, index) => (
+            <div className="slide-page" style={{ backgroundColor: theme.darkPurple }}>
+              <Slide />
+            </div>
+          ))}
+        </div>
+        <a className="prev" onClick={prevSlide}>&#10094;</a>
+        <a className="next" onClick={nextSlide}>&#10095;</a>
+      </div>
+    )
+  }
+  return (
+    <div>
+      <Slideshow slides={slides} />
+    </div>
+  );
+}
+
+
+
+
 function TheProblem() {
   const pyridostigmine = () =>
     <div
@@ -296,11 +393,14 @@ function TheProblem() {
 function OurSolution() {
   return(
     <div
-      className="max-w-5xl mx-auto px-4"
+      className="max-w-5xl mx-auto px-4 w-screen h-screen flex flex-col justify-center items-center"
     >
-      <h1 className="text-3xl font-extrabold py-6">
+      <h1 className="text-3xl font-extrabold">
         Our Solution
       </h1>
+      <p className="text-m">Our B-Bots, made using DNA Origami, will target B-Cells that produce acetylcholine receptor (AChR) antibodies </p>
+      <p className="text-m">The Nanobots will destroy these B-Cells by inducing apoptosis</p>
+      <img className="p-5" src="DNAOrigami.png" alt="" />
     </div>
   )
 }
@@ -464,7 +564,7 @@ useEffect(() => {
       <Header
         onHome={() => setPage({ name: "home" })}
         onHistoryMG={() => setPage({ name: "history-mg" })}
-        onHistoryNano={() => setPage("history-nano")}
+        onHistoryNano={() => setPage({name: "history-nano"})}
         onTheProblem={() => setPage({ name: "the problem" })}
         onOurSolution={() => setPage({ name: "our solution" })}
         onImpact={() => setPage({ name: "impact" })}
@@ -476,8 +576,8 @@ useEffect(() => {
 
       <main className="pt-0 pb-0">
         {page.name === "home" && <Home/>}
-        {page.name === "history-nano" && <History />}
-        {page.name === "history-mg" && <History />}
+        {page.name === "history-nano" && <HistoryNano />}
+        {page.name === "history-mg" && <HistoryMG />}
         {page.name === "the problem" && <TheProblem />}
         {page.name === "our solution" && <OurSolution />}
         {page.name === "impact" && <Impact />}
