@@ -77,7 +77,7 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
   
     return (
     <div
-      className={`sticky top-0 z-50 backdrop-blur transition-all ${scrolled ? "shadow-sm" : ""}`}
+      className={`sticky top-0 z-10 backdrop-blur transition-all ${scrolled ? "shadow-sm" : ""}`}
       style={{ background: theme.pink}}
     >
       <div className="h-20 max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-10 py-3">
@@ -134,23 +134,33 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
 function Home() {
   return (
     <div
-      className="max-w-5xl max-w-5xl mx-auto px-4"
+      className="max-w-5xl mx-auto px-4 w-full h-full p-5"
     >
+      <h1 className="py-5">B-Bots</h1>
+      <h2 pt-5>Mysthenia Gravis is caused by an overactive Thymus that produces an excess of antibodies. These specific antibodies inhibit acetylcholine from binding to their receptors, impairing muscle function</h2>
+      <h2 className="pt-10">Diagram of the Acetylcholine Mechanism that is inhibited by specific antibodies:</h2>
+      <img className="pt-5" src="/AChR.png" alt="" />
       <h1 className="text-3xl font-extrabold py-6">
-        B-Bots
+        Nanotechnology expanded. 
       </h1>
-      <h2>
-        B-Bots
+
+      <h2 className="pt-5">
+      
+      Our B-Bots are DNA Origami nanobots that can recognize specific B-cells. The nanobots then release molecules incapsuled in the DNA package to induce apoptosis.
+
+
       </h2>
-      <img src="/AChR.png" alt="" />
-      <img src="DNAOrigami.png" alt="" />
+
+      <h2>They induce apoptosis into these cells </h2>
+      
+      
     </div>
   );
 }
 
 
 
-function History() {
+function HistoryNano() {
   const slide1 = () => 
     <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
       <div className="flex flex-col justify-center items-center">
@@ -169,7 +179,7 @@ function History() {
         <h1 class="text-6xl">
           Scanning Tunneling Microscope (STM) capable of manipulating individual xenon atoms
         </h1>
-        <img class="p-5" src="IBM_in_atoms.gif" alt="" />
+        <img class="p-5 size-100" src="IBM_in_atoms.gif" alt="" />
       </div>
     </div>;
 
@@ -205,6 +215,87 @@ function History() {
   );
 }
 
+function HistoryMG() {
+  const slide1 = () => 
+  <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+    <div className="flex flex-col justify-center items-center">
+    <h1 class="text-6xl p-10">1672</h1>
+    <h1 class=" text-6xl p-5">First Clinical Description</h1>
+    <p lass="text-m px-35">The historical record of MG begins with Thomas Willis, a famous English physician.</p>
+    <ul className="text-m px-35 py-5">
+      <li>Significance: Willis provided the first account of a patient with fluctuating muscle weakness that recovered after rest.</li>
+      <li>Early Case: He specifically described a woman who temporarily lost her power of speech, becoming "mute as a fish".</li>
+      <li>Impact: While highly accurate, this account was largely unnoticed in medical literature until 1903.</li>
+    </ul>
+    
+
+
+
+
+    <img class="p-5 size-60" src="Healthline_7-Common-Symptoms-of-H51Myasthenia-Gravis_1296x1740.png.avif" alt="" />
+    </div>
+  
+  </div>;
+  const slide2 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+  <div className="flex flex-col justify-center items-center">
+  <h1 class="text-6xl p-10">1895</h1>
+  <h1 class=" text-6xl p-5">The Naming of Myasthenia Gravis</h1>
+  <p class="text-m px-35">In the late 19th century, German physicians formalized the condition as a distinct medical entity.</p>
+  <ul className="text-m px-35 py-5">
+    <li>Significance: Friedrich Jolly coined the term "myasthenia gravis pseudoparalytica".</li>
+    <li>Etymology: The name combined the Greek mya (muscle) and asthenia (weakness) with the Latin gravis (severe).</li>
+    <li>Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel Goldflam (1893), which were previously known as the "Erb-Goldflam symptom complex".</li>
+  </ul>
+
+  
+  </div>
+
+</div>;
+  const slide3 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+  <div className="flex flex-col justify-center items-center">
+  <h1 class="text-6xl p-10">1934</h1>
+  <h1 class=" text-6xl p-5">The "Miracle at St. Alfege's"</h1>
+  <p class="text-m px-35">Treatment for MG was virtually non-existent until a major breakthrough by Mary Broadfoot Walker.</p>
+  <ul className="text-m px-35 py-5">
+    <li>Significance: Walker recognized that MG symptoms resembled curare poisoning and successfully treated a patient using physostigmine, a cholinesterase inhibitor.</li>
+    <li>Discovery: This trial proved that the symptoms could be promptly improved by pharmacological intervention.</li>
+    <li>Outcome: Her work established the first effective treatment for the disease and led to the widespread use of acetylcholinesterase inhibitors.</li>
+  </ul>
+  
+  </div>
+
+</div>;
+const slide4 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+<div className="flex flex-col justify-center items-center">
+<h1 class="text-6xl p-10">1960</h1>
+<h1 class=" text-6xl p-5">Establishing the Autoimmune Theory
+</h1>
+<p class="text-m px-35">While researchers suspected an immune link for decades, the 1960s marked the definitive shift toward understanding MG's true cause.
+
+</p>
+<ul className="text-m px-35 py-5">
+  
+  <li>Significance: John Simpson proposed that MG was an autoimmune disease caused by antibodies blocking nerve signaling at the motor end plate.</li>
+  <li>Scientific Proof: His hypothesis, alongside work by Nastuk, was later confirmed in 1973 by Patrick and Lindstrom, who demonstrated that an autoimmune response against acetylcholine receptors caused MG-like weakness in rabbits.</li>
+  <li>Legacy: This discovery revolutionized management, leading to the use of immunosuppressants, corticosteroids, and plasma exchange as standard therapies.
+</li>
+</ul>
+
+</div>
+
+</div>;
+  const slides = [slide1, slide2, slide3, slide4]
+  
+  return (
+    <div>
+      <Slideshow slides={slides} />
+    </div>
+  );
+}
+
+
+
+
 function TheProblem() {
   const pyridostigmine = () =>
     <div
@@ -231,7 +322,68 @@ function TheProblem() {
             </ul>
           </p>
           <p>
-            The effects of the medecine are also short-lived, lasting only a few hours are requiring patients to take the medication multiple times a day.
+            The effects of the medicine are also short-lived, lasting only a few hours and requiring patients to take the medication multiple times a day.
+          </p>
+        </div>
+      </div>
+    </div>
+    const prednisone = () =>
+    <div
+      className = "p-10 px-20 flex gap-9"
+    >
+      <div className="flex items-center">
+        <img src="public/Prednisone-removebg-preview.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
+      </div>
+      <div className = "space-y-5">
+        <h1>
+          Prednisone
+        </h1>
+        <div className="space-y-4">
+          <p>
+            Works by mimicing the effects of cortisol, a natural hormone produced by the adrenal glands. This significantly reduces the activity of the immune system.
+          </p>
+          <p>
+            Side effects:
+            <ul className="list-disc pl-10">
+              <li> Weight Gain </li>
+              <li> Sleep disturbances </li>
+              <li> Mood and behavioral changes </li>
+              <li> Gastrointestinal issues </li>
+              <li> Osteoporosis/bone issues</li>
+            </ul>
+          </p>
+          <p>
+            The effects of the medicine initally can also worsen sypmtoms enough to require hospitalization or respiratory support.
+          </p>
+        </div>
+      </div>
+    </div>
+    const thymectomy = () =>
+    <div
+      className = "p-10 px-20 flex gap-9"
+    >
+      <div className="flex items-center">
+        <img src="/thymus.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
+      </div>
+      <div className = "space-y-5">
+        <h1>
+          Thymectomy
+        </h1>
+        <div className="space-y-4">
+          <p>
+            Surgical removal of the thymus gland, performed through traditional open surgery or minimally invasive techniques (like VATS or robotic)
+          </p>
+          <p>
+            Side effects:
+            <ul className="list-disc pl-10">
+              <li> Infection and Breathing Issues </li>
+              <li> Bleeding </li>
+              <li> Tissue Damage </li>
+              <li> Myasthenic Crisis </li>
+            </ul>
+          </p>
+          <p>
+            Long term effects of this surgery have been debated, but include potential increased risks for other autoimmune diseases, cancers, and infections.
           </p>
         </div>
       </div>
@@ -267,7 +419,7 @@ function TheProblem() {
         </div>
       </div>
     </div>
-  const slides = [pyridostigmine, rituximab]
+  const slides = [pyridostigmine, rituximab, prednisone, thymectomy]
   
   return(
     <div
@@ -300,11 +452,14 @@ function TheProblem() {
 function OurSolution() {
   return(
     <div
-      className="max-w-5xl mx-auto px-4"
+      className="max-w-5xl mx-auto px-4 w-screen h-screen "
     >
       <h1 className="text-3xl font-extrabold py-6">
         Our Solution
       </h1>
+      <p className="text-m">Our B-Bots, made using DNA Origami, will target B-Cells that produce acetylcholine receptor (AChR) antibodies </p>
+      <p className="text-m pb-5">The Nanobots will destroy these B-Cells by inducing apoptosis</p>
+      <img className="" src="DNAOrigami.png" alt="" />
     </div>
   )
 }
@@ -321,6 +476,23 @@ function Impact() {
     </div>
   );
 }
+// Add this new component function near the bottom of your file:
+
+function Footer() {
+  return (
+    <footer className={`mt-10 py-6 text-center text-sm`} style={{ backgroundColor: theme.pink, color: '#FFFFFF' }}>
+      <div className="max-w-6xl mx-auto px-4">
+        <p>
+          &copy; 2025 B-Bots |  
+          <a href="mailto:bbots@gmail.com" className="ml-1 text-white underline hover:text-gray-300 hover:no-underline transition duration-300">
+             Contact Us: bbots@gmail.com
+          </a>
+        </p>
+      </div>
+    </footer>
+  );
+}
+
 
 function Bibliography() {
   const sources = [
@@ -478,7 +650,7 @@ useEffect(() => {
       <Header
         onHome={() => setPage({ name: "home" })}
         onHistoryMG={() => setPage({ name: "history-mg" })}
-        onHistoryNano={() => setPage("history-nano")}
+        onHistoryNano={() => setPage({name: "history-nano"})}
         onTheProblem={() => setPage({ name: "the problem" })}
         onOurSolution={() => setPage({ name: "our solution" })}
         onImpact={() => setPage({ name: "impact" })}
@@ -490,13 +662,14 @@ useEffect(() => {
 
       <main className="pt-0 pb-0">
         {page.name === "home" && <Home/>}
-        {page.name === "history-nano" && <History />}
-        {page.name === "history-mg" && <History />}
+        {page.name === "history-nano" && <HistoryNano />}
+        {page.name === "history-mg" && <HistoryMG />}
         {page.name === "the problem" && <TheProblem />}
         {page.name === "our solution" && <OurSolution />}
         {page.name === "impact" && <Impact />}
         {page.name === "bibliography" && <Bibliography/>}
       </main>
+      <Footer/>
     </div>
   );
 }
