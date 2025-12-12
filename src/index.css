@@ -6,7 +6,9 @@ html, body {
   box-sizing: border-box; 
 }
 h1 {
-  color: #2E294E
+  color: #2E294E;
+  font-size: 1.875rem; /* 3xl */
+  font-weight: 800 /* Extra bold */
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-hide::-webkit-scrollbar {

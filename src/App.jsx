@@ -72,15 +72,6 @@ function Header({ onHome, onHistory, onTheProblem, onOurSolution, onImpact, onBi
   );
 }
 
-function Formatting() {
-  return(
-    <div
-      className="max-w-5xl mx-auto px-4"
-    >
-    </div>
-  )
-}
-
 function Home() {
   return (
     <div
@@ -147,6 +138,45 @@ function TheProblem() {
       <h1 className="text-3xl font-extrabold py-6">
         The Problem
       </h1>
+      <div className="space-y-10">
+        <div className="space-y-4">
+          <p>
+            Myasthenia gravis (MG) is an autoimmune disease in which voluntary muscles—such as those in the face, throat, arms, and legs—feel weak and tire easily. 
+            About 20 per 100,000 people are afflicted with the disease globally.
+          </p>
+          <p>
+            Current treatment options are limited and are often accompanied by a range of side effects.
+          </p>
+        </div>
+        <div
+          className = "p-10 flex gap-9 rounded-3xl"
+          style = {{ backgroundColor: theme.purple }}
+        >
+          <img src="/pyridostigmine.png" alt="pyridostigmine" />
+          <div className = "space-y-5">
+            <h1>
+              Pyridostigmine
+            </h1>
+            <div className="space-y-4">
+              <p>
+                Works by increasing the level of ACh in the body. Pridostigmine prevents breakdown of ACh in the neuromuscular junction.
+              </p>
+              <p>
+                Side effects:
+                <ul className="list-disc pl-10">
+                  <li> Stomach cramps </li>
+                  <li> Diarrhea </li>
+                  <li> Muscle twitching </li>
+                  <li> Nausea </li>
+                </ul>
+              </p>
+              <p>
+                The effects of the medecine are also short-lived, lasting only a few hours are requiring patients to take the medication multiple times a day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
