@@ -134,7 +134,7 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
 function Home() {
   return (
     <div
-      className="max-w-5xl mx-auto px-4"
+      className="max-w-5xl mx-auto px-4 w-full h-full p-5"
     >
       <h1 className="py-5">B-Bots</h1>
       <h2 pt-5>Mysthenia Gravis is caused by an overactive Thymus that produces an excess of antibodies. These specific antibodies inhibit acetylcholine from binding to their receptors, impairing muscle function</h2>
@@ -221,12 +221,12 @@ function HistoryMG() {
     <div className="flex flex-col justify-center items-center">
     <h1 class="text-6xl p-10">1672</h1>
     <h1 class=" text-6xl p-5">First Clinical Description</h1>
-    <div class="text-m px-35">
-    <p>The historical record of MG begins with Thomas Willis, a famous English physician.</p>
-      <p>Significance: Willis provided the first account of a patient with fluctuating muscle weakness that recovered after rest.</p>
-      <p>Early Case: He specifically described a woman who temporarily lost her power of speech, becoming "mute as a fish".</p>
-      <p>Impact: While highly accurate, this account was largely unnoticed in medical literature until 1903.</p>
-    </div>
+    <p lass="text-m px-35">The historical record of MG begins with Thomas Willis, a famous English physician.</p>
+    <ul className="text-m px-35 py-5">
+      <li>Significance: Willis provided the first account of a patient with fluctuating muscle weakness that recovered after rest.</li>
+      <li>Early Case: He specifically described a woman who temporarily lost her power of speech, becoming "mute as a fish".</li>
+      <li>Impact: While highly accurate, this account was largely unnoticed in medical literature until 1903.</li>
+    </ul>
     
 
 
@@ -240,11 +240,13 @@ function HistoryMG() {
   <div className="flex flex-col justify-center items-center">
   <h1 class="text-6xl p-10">1895</h1>
   <h1 class=" text-6xl p-5">The Naming of Myasthenia Gravis</h1>
-  <p class="text-m px-35">In the late 19th century, German physicians formalized the condition as a distinct medical entity.
-Significance: Friedrich Jolly coined the term "myasthenia gravis pseudoparalytica".
-Etymology: The name combined the Greek mya (muscle) and asthenia (weakness) with the Latin gravis (severe).
-Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel Goldflam (1893), which were previously known as the "Erb-Goldflam symptom complex".
-</p>
+  <p class="text-m px-35">In the late 19th century, German physicians formalized the condition as a distinct medical entity.</p>
+  <ul className="text-m px-35 py-5">
+    <li>Significance: Friedrich Jolly coined the term "myasthenia gravis pseudoparalytica".</li>
+    <li>Etymology: The name combined the Greek mya (muscle) and asthenia (weakness) with the Latin gravis (severe).</li>
+    <li>Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel Goldflam (1893), which were previously known as the "Erb-Goldflam symptom complex".</li>
+  </ul>
+
   
   </div>
 
@@ -253,12 +255,12 @@ Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel G
   <div className="flex flex-col justify-center items-center">
   <h1 class="text-6xl p-10">1934</h1>
   <h1 class=" text-6xl p-5">The "Miracle at St. Alfege's"</h1>
-  <p class="text-m px-35">reatment for MG was virtually non-existent until a major breakthrough by Mary Broadfoot Walker.
-Significance: Walker recognized that MG symptoms resembled curare poisoning and successfully treated a patient using physostigmine, a cholinesterase inhibitor.
-Discovery: This trial proved that the symptoms could be promptly improved by pharmacological intervention.
-Outcome: Her work established the first effective treatment for the disease and led to the widespread use of acetylcholinesterase inhibitors.
-
-</p>
+  <p class="text-m px-35">Treatment for MG was virtually non-existent until a major breakthrough by Mary Broadfoot Walker.</p>
+  <ul className="text-m px-35 py-5">
+    <li>Significance: Walker recognized that MG symptoms resembled curare poisoning and successfully treated a patient using physostigmine, a cholinesterase inhibitor.</li>
+    <li>Discovery: This trial proved that the symptoms could be promptly improved by pharmacological intervention.</li>
+    <li>Outcome: Her work established the first effective treatment for the disease and led to the widespread use of acetylcholinesterase inhibitors.</li>
+  </ul>
   
   </div>
 
@@ -269,12 +271,15 @@ const slide4 = () => <div className="h-screen w-screen" style={{ backgroundColor
 <h1 class=" text-6xl p-5">Establishing the Autoimmune Theory
 </h1>
 <p class="text-m px-35">While researchers suspected an immune link for decades, the 1960s marked the definitive shift toward understanding MG's true cause.
-Significance: John Simpson proposed that MG was an autoimmune disease caused by antibodies blocking nerve signaling at the motor end plate.
-Scientific Proof: His hypothesis, alongside work by Nastuk, was later confirmed in 1973 by Patrick and Lindstrom, who demonstrated that an autoimmune response against acetylcholine receptors caused MG-like weakness in rabbits.
-Legacy: This discovery revolutionized management, leading to the use of immunosuppressants, corticosteroids, and plasma exchange as standard therapies.
-
 
 </p>
+<ul className="text-m px-35 py-5">
+  
+  <li>Significance: John Simpson proposed that MG was an autoimmune disease caused by antibodies blocking nerve signaling at the motor end plate.</li>
+  <li>Scientific Proof: His hypothesis, alongside work by Nastuk, was later confirmed in 1973 by Patrick and Lindstrom, who demonstrated that an autoimmune response against acetylcholine receptors caused MG-like weakness in rabbits.</li>
+  <li>Legacy: This discovery revolutionized management, leading to the use of immunosuppressants, corticosteroids, and plasma exchange as standard therapies.
+</li>
+</ul>
 
 </div>
 
@@ -440,6 +445,23 @@ function Impact() {
     </div>
   );
 }
+// Add this new component function near the bottom of your file:
+
+function Footer() {
+  return (
+    <footer className={`mt-10 py-6 text-center text-sm`} style={{ backgroundColor: theme.pink, color: '#FFFFFF' }}>
+      <div className="max-w-6xl mx-auto px-4">
+        <p>
+          &copy; 2025 B-Bots |  
+          <a href="mailto:bbots@gmail.com" className="ml-1 text-white underline hover:text-gray-300 hover:no-underline transition duration-300">
+             Contact Us: bbots@gmail.com
+          </a>
+        </p>
+      </div>
+    </footer>
+  );
+}
+
 
 function Bibliography() {
   const sources = [
@@ -606,6 +628,7 @@ useEffect(() => {
         {page.name === "impact" && <Impact />}
         {page.name === "bibliography" && <Bibliography/>}
       </main>
+      <Footer/>
     </div>
   );
 }
