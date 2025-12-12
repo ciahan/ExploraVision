@@ -158,8 +158,6 @@ function Home() {
   );
 }
 
-
-
 function HistoryNano() {
   const slide1 = () => 
     <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
@@ -293,9 +291,6 @@ const slide4 = () => <div className="h-screen w-screen" style={{ backgroundColor
   );
 }
 
-
-
-
 function TheProblem() {
   const pyridostigmine = () =>
     <div
@@ -329,10 +324,10 @@ function TheProblem() {
     </div>
     const prednisone = () =>
     <div
-      className = "p-10 px-20 flex gap-9"
+      className = "p-10 px-20 flex gap-13"
     >
       <div className="flex items-center">
-        <img src="public/Prednisone-removebg-preview.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
+        <img src="public/Prednisone-removebg-preview.png" alt="pyridostigmine" className="w-[400px] h-auto"/>
       </div>
       <div className = "space-y-5">
         <h1>
@@ -360,7 +355,7 @@ function TheProblem() {
     </div>
     const thymectomy = () =>
     <div
-      className = "p-10 px-20 flex gap-9"
+      className = "p-10 px-20 flex gap-13"
     >
       <div className="flex items-center">
         <img src="/thymus.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
@@ -371,14 +366,15 @@ function TheProblem() {
         </h1>
         <div className="space-y-4">
           <p>
-            Surgical removal of the thymus gland, performed through traditional open surgery or minimally invasive techniques (like VATS or robotic)
+            Surgical removal of the thymus gland, performed through traditional open surgery or minimally invasive techniques (like VATS or robotic). 
           </p>
           <p>
             Side effects:
             <ul className="list-disc pl-10">
-              <li> Infection and Breathing Issues </li>
+              <li> Infection</li>
+              <li> Breathing complications </li>
               <li> Bleeding </li>
-              <li> Tissue Damage </li>
+              <li> Tissue damage </li>
               <li> Myasthenic Crisis </li>
             </ul>
           </p>
@@ -431,11 +427,9 @@ function TheProblem() {
       <div className="space-y-10">
         <div className="space-y-4">
           <p>
-            Myasthenia gravis (MG) is an autoimmune disease in which voluntary muscles—such as those in the face, throat, arms, and legs—feel weak and tire easily. 
-            About 20 per 100,000 people are afflicted with the disease globally.
-          </p>
-          <p>
-            Current treatment options are limited and are often accompanied by a range of side effects.
+            About 20 per 100,000 people are afflicted with myasthenia gravis globally.
+            While it is a relatively rare disease, that does not undermine the need for additional research for a cure or alternative treatment options.
+            Current medicication and procedures available to patients are limited, ineffective, and often accompanied by a range of side effects.
           </p>
         </div>
         <div
@@ -480,7 +474,7 @@ function Impact() {
 
 function Footer() {
   return (
-    <footer className={`mt-10 py-6 text-center text-sm`} style={{ backgroundColor: theme.pink, color: '#FFFFFF' }}>
+    <footer className={`sticky bottom-0 w-screen py-6 text-center text-sm`} style={{ backgroundColor: theme.pink, color: '#FFFFFF' }}>
       <div className="max-w-6xl mx-auto px-4">
         <p>
           &copy; 2025 B-Bots |  
@@ -640,36 +634,40 @@ useEffect(() => {
 }, [padVisible]);
 
   return (
-    <div
-      className={`${theme.bg} min-h-screen`}
-      style={{ 
-        fontFamily: '"Poppins", ui-sans-serif, system-ui, -apple-system, sans-serif',
-        backgroundColor: theme.lightPurple 
-      }}
-    >
-      <Header
-        onHome={() => setPage({ name: "home" })}
-        onHistoryMG={() => setPage({ name: "history-mg" })}
-        onHistoryNano={() => setPage({name: "history-nano"})}
-        onTheProblem={() => setPage({ name: "the problem" })}
-        onOurSolution={() => setPage({ name: "our solution" })}
-        onImpact={() => setPage({ name: "impact" })}
-        onBibliography={() => {
-          setPadVisible(true);
-          setPage({ name: "bibliography" });
+    <div>
+      <div
+        className={`${theme.bg} min-h-screen pb-5`}
+        style={{ 
+          fontFamily: '"Poppins", ui-sans-serif, system-ui, -apple-system, sans-serif',
+          backgroundColor: theme.lightPurple 
         }}
-      />
+      >
+        <Header
+          onHome={() => setPage({ name: "home" })}
+          onHistoryMG={() => setPage({ name: "history-mg" })}
+          onHistoryNano={() => setPage({name: "history-nano"})}
+          onTheProblem={() => setPage({ name: "the problem" })}
+          onOurSolution={() => setPage({ name: "our solution" })}
+          onImpact={() => setPage({ name: "impact" })}
+          onBibliography={() => {
+            setPadVisible(true);
+            setPage({ name: "bibliography" });
+          }}
+        />
 
-      <main className="pt-0 pb-0">
-        {page.name === "home" && <Home/>}
-        {page.name === "history-nano" && <HistoryNano />}
-        {page.name === "history-mg" && <HistoryMG />}
-        {page.name === "the problem" && <TheProblem />}
-        {page.name === "our solution" && <OurSolution />}
-        {page.name === "impact" && <Impact />}
-        {page.name === "bibliography" && <Bibliography/>}
-      </main>
-      <Footer/>
+        <main className="pt-0 pb-0">
+          {page.name === "home" && <Home/>}
+          {page.name === "history-nano" && <HistoryNano />}
+          {page.name === "history-mg" && <HistoryMG />}
+          {page.name === "the problem" && <TheProblem />}
+          {page.name === "our solution" && <OurSolution />}
+          {page.name === "impact" && <Impact />}
+          {page.name === "bibliography" && <Bibliography/>}
+        </main>
+      </div>
+      <div>
+        <Footer/>
+      </div>
     </div>
   );
 }
