@@ -134,26 +134,21 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
 function Home() {
   return (
     <div
-      className="max-w-5xl mx-auto px-4 w-full h-full p-5"
+      className="max-w-5xl mx-auto w-full h-full p-5 space-y-5"
     >
-      <h1 className="py-5">B-Bots</h1>
-      <h2 pt-5>Mysthenia Gravis is caused by an overactive Thymus that produces an excess of antibodies. These specific antibodies inhibit acetylcholine from binding to their receptors, impairing muscle function</h2>
-      <h2 className="pt-10">Diagram of the Acetylcholine Mechanism that is inhibited by specific antibodies:</h2>
-      <img className="pt-5" src="/AChR.png" alt="" />
-      <h1 className="text-3xl font-extrabold py-6">
-        Nanotechnology expanded. 
-      </h1>
-
-      <h2 className="pt-5">
+      <h1 className="">B-Bots: A Breakthrough in the Treatment of Myasthenia Gravis</h1>
+      <h2 pt-5>Mysthenia Gravis (MG) is caused by an overactive Thymus that produces an excess of antibodies. These specific antibodies inhibit acetylcholine from binding to their receptors, impairing muscle function</h2>
+      <img className="pt-5" src="/AChR.png" alt=""/>
+      <h2 className=""> See above a depiction of the Acetylcholine Mechanism. </h2>
       
-      Our B-Bots are DNA Origami nanobots that can recognize specific B-cells. The nanobots then release molecules incapsuled in the DNA package to induce apoptosis.
-
-
+      <h1 className="text-3xl font-extrabold pt-6"> Nanotechnology expanded </h1>
+      <h2 className=""> 
+        Our B-Bots are organic nanobots that use DNA Origami technology to recognize specific B-cells.
+        They work by inducing apoptosis in these the target B-cells to improve muscle function of MG patients.
+      </h2>      
+      <h2>
+        See the "Our Solution" section for more details.
       </h2>
-
-      <h2>They induce apoptosis into these cells </h2>
-      
-      
     </div>
   );
 }
@@ -456,12 +451,22 @@ function OurSolution() {
 
 function Impact() {
   return (
-    <div className="max-w-5xl mx-auto px-4">
-      <h1 className="text-3xl font-extrabold py-6" style={{ color: theme.darkPurple }}>
+    <div className="max-w-5xl mx-auto p-5 space-y-6">
+      <h1 className="text-3xl font-extrabold" style={{ color: theme.darkPurple }}>
         Impact
       </h1>
       <p>
+        Along with effects on physical health, symptoms of myasthenia gravis can impact patient's social life
+        and mental health. For example, in a survey of 547 MG patients, 35% reported a significant negativve impact
+        on their social life and relationship with friends.
+      </p>
+      <img src="/friends.png" alt=""/>
+      <p>
         Our goal is for our device to significantly improve the quality-of-life burdens that myasthenia gravis imposes on those afflicted with the disease.
+      </p>
+      <p>
+        We also aspire that the technological advances our B-Bot technology fosters can be applied to treat other diseases involving
+        B-cells and mistakenly-produced antibodies (e.g. autoimmune diseases and certain forms of cancer.)
       </p>
     </div>
   );
