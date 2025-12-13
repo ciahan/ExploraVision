@@ -227,7 +227,7 @@ function HistoryMG() {
         Specifically, he described a woman who had temporarily lost her capability of speech, becoming "mute as a fish".
         While highly accurate, this account remained largely unnoticed in medical literature until 1903.
       </p>
-      <img class="p-5 size-60 mx-auto" src="thomas wills.jpg" alt="" />
+      <img class="pt-7 h-70 w-auto mx-auto" src="thomas wills.jpg" alt="" />
     </div>
   const slide2 = () => 
     <div className="py-6 px-20">
@@ -294,7 +294,7 @@ function TheProblem() {
       className = "p-10 px-20 flex gap-9"
     >
       <div className="flex items-center">
-        <img src="/pyridostigmine.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
+        <img src="/pyridostigmine.png" alt="pyridostigmine" className="w-100 h-auto"/>
       </div>
       <div className = "space-y-5">
         <h1>
@@ -462,13 +462,13 @@ function Impact() {
         Impact
       </h1>
       <p>
-        Along with effects on physical health, symptoms of myasthenia gravis can impact patient's social life
-        and mental health. For example, in a survey of 547 MG patients, 35% reported a significant negativve impact
+        Along with effects on physical health, symptoms of myasthenia gravis can also impact patients' social life
+        and mental health. In a survey of 547 MG patients, 35% reported a significant negative impact
         on their social life and relationship with friends.
       </p>
       <img src="/friends.png" alt=""/>
       <p>
-        Our goal is for our device to significantly improve the quality-of-life burdens that myasthenia gravis imposes on those afflicted with the disease.
+        We aim for our device to significantly improve the quality-of-life burdens that myasthenia gravis imposes on those afflicted with the disease.
       </p>
       <p>
         We also aspire that the technological advances our B-Bot technology fosters can be applied to treat other diseases involving
