@@ -445,18 +445,28 @@ function OurSolution() {
     <div
       className="max-w-5xl mx-auto p-5 space-y-6 h-full"
     >
-      <h1 className="text-3xl font-extrabold py-3">
+      <h1 className="text-3xl font-extrabold">
         Our Solution
       </h1>
-      <p className="text-m">Our B-Bots, made using DNA Origami, will target B-Cells that produce acetylcholine receptor (AChR) antibodies. The Nanobots will then destroy these B-Cells by inducing apoptosis</p>
-      <p>In order to identify the specific B-cells, our nanobots will be specifically designed to recognize cell markers on B-cells such as CD319, CD27, CD38, and CD138. Once the cells are identified, specific molecules that can induce apoptosis in the B-cells will be released from the DNA capsules. Since DNA Origami is made out of biocompatible materials like proteins and DNA segments, the body will be able to break them down after they have performed their function</p>
-      <p>To regulate this breakdown, certain molecules like oligolysine conjugated to PEG can shield the nanobots and limit degradation of the DNA structure. </p>
+      <p className="text-m">
+        Our B-Bots, made using DNA Origami, will target B-Cells that produce acetylcholine receptor (AChR) antibodies.
+        The Nanobots will then destroy these B-Cells by inducing apoptosis.
+      </p>
+      <p>
+        In order to identify the specific B-cells that produce AChR antibodies, our nanobots will be specifically designed to recognize cell markers on the B-cells such as CD319, CD27, CD38, and CD138.
+        Once the cells are identified, specific molecules that can induce apoptosis in the B-cells will be released from the DNA capsules. Since DNA Origami is made out of biocompatible materials like proteins and DNA segments,
+        the body will be able to break them down after they have performed their function.
+      </p>
+      <p>
+        To regulate this breakdown, certain molecules like oligolysine conjugated to PEG can shield the nanobots and limit degradation of the DNA structure.
+      </p>
       <div className="flex flex-col items-center justify-center">
-      <img src="DNAOrigami.png" alt="" />
-      <p className="pt-5">In this diagram of DNA oragami molecules, you can see the outside DNA capsule as well as the internal proteins or other molecules that would be released to induce apoptosis. </p>
-      
+        <img src="DNAOrigami.png" alt="" />
       </div>
-      <p className="text-l py-3 font-bold">By Destroying B-cells, we can eliminate the harmful antibodies, allowing ACh to bind to receptors</p>
+      <p className="">
+        In this model of DNA oragami molecules, you can see the external DNA capsule as well as the internal proteins and molecules that would be released to induce apoptosis.
+      </p>
+      <p className="text-l font-bold">By Destroying B-cells, we can eliminate the harmful antibodies, allowing ACh to bind to receptors.</p>
       
     </div>
   )
