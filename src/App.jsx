@@ -137,9 +137,15 @@ function Home() {
       className="max-w-5xl mx-auto w-full h-full p-5 space-y-5"
     >
       <h1 className="">B-Bots: A Breakthrough in the Treatment of Myasthenia Gravis</h1>
-      <h2 pt-5>Mysthenia Gravis (MG) is caused by an overactive Thymus that produces an excess of antibodies. These specific antibodies inhibit acetylcholine from binding to their receptors, impairing muscle function</h2>
-      <img className="pt-5" src="/AChR.png" alt=""/>
-      <h2 className=""> See above a depiction of the Acetylcholine Mechanism. </h2>
+      <h2 pt-5>
+        Mysthenia Gravis (MG) is caused by an overactive thymus that produces an excess of antibodies.
+        These specific antibodies inhibit acetylcholine from binding to their receptors, impairing muscle function.
+      </h2>
+      <div>
+        <img className="pt-3 pb-2" src="/AChR.png" alt=""/>
+        <h2 className=""> Depicted above is an illustration of the neuromuscular junction. </h2>
+      </div>
+      
       
       <h1 className="text-3xl font-extrabold pt-6"> Nanotechnology expanded </h1>
       <h2 className=""> 
@@ -214,25 +220,25 @@ function HistoryNano() {
 function HistoryMG() {
   const slide1 = () => 
     <div className="py-6 px-20">
-      <h1 class="pb-4"> 1672 - First Clinical Description </h1>
+      <h1 class="pb-4 text-center"> 1672 - First Clinical Description </h1>
       <p class="text-m">
-        The historical record of myasthenia gravis begins with Thomas Willis, a famous English physician.
+        The historical record of myasthenia gravis begins with <b>Thomas Willis</b>, a famous English physician.
         He provided the first account of a patient with fluctuating muscle weakness that improved after rest.
-        Specifically, he described a woman who had temporarily lost her poewr of speech, becoming "mute as a fish".
-        While hightly accurate, this account remained largely unnoticed in medical literature until 1903.
+        Specifically, he described a woman who had temporarily lost her capability of speech, becoming "mute as a fish".
+        While highly accurate, this account remained largely unnoticed in medical literature until 1903.
       </p>
-      <img class="p-5 size-60" src="thomas wills.jpg" alt="" />
+      <img class="pt-7 h-70 w-auto mx-auto" src="thomas wills.jpg" alt="" />
     </div>
   const slide2 = () => 
-    <div className="h-screen w-screen p-5">
-      <div className="flex flex-col justify-center items-center">
-      <h1 class="text-6xl p-10">1895 - The Naming of Myasthenia Gravis</h1>
-      <ul className="text-m py-5">
-        <li>Significance: Friedrich Jolly coined the term "myasthenia gravis pseudoparalytica".</li>
-        <li>Etymology: The name combined the Greek mya (muscle) and asthenia (weakness) with the Latin gravis (severe).</li>
-        <li>Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel Goldflam (1893), which were previously known as the "Erb-Goldflam symptom complex".</li>
-      </ul>
-      </div>
+    <div className="py-6 px-20">
+      <h1 class="text-6xl text-center pb-4">1895 - The Naming of Myasthenia Gravis</h1>
+      <p>
+        The term "myasthenia gravis pseudoparalytica" was coined by German neurologist and psychiatrist <b>Friedrich Jolly</b>.
+        The name combines the Greek words mya (muscles) and asthenia (weakness) with the Latin gravis, meaning severe.
+        Jolly's work built upon the observations of neurologists Wilhelm Erb and Samuel Goldflam, whose discriptions of the
+        disease were previous known as the "<b>Erb-Goldflam Symptom-Complex</b>".
+      </p>
+
     </div>;
   const slide3 = () => <div className="h-screen w-screen">
   <div className="flex flex-col justify-center items-center">
@@ -288,7 +294,7 @@ function TheProblem() {
       className = "p-10 px-20 flex gap-9"
     >
       <div className="flex items-center">
-        <img src="/pyridostigmine.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
+        <img src="/pyridostigmine.png" alt="pyridostigmine" className="w-100 h-auto"/>
       </div>
       <div className = "space-y-5">
         <h1>
@@ -463,13 +469,13 @@ function Impact() {
         Impact
       </h1>
       <p>
-        Along with effects on physical health, symptoms of myasthenia gravis can impact patient's social life
-        and mental health. For example, in a survey of 547 MG patients, 35% reported a significant negativve impact
+        Along with effects on physical health, symptoms of myasthenia gravis can also impact patients' social life
+        and mental health. In a survey of 547 MG patients, 35% reported a significant negative impact
         on their social life and relationship with friends.
       </p>
       <img src="/friends.png" alt=""/>
       <p>
-        Our goal is for our device to significantly improve the quality-of-life burdens that myasthenia gravis imposes on those afflicted with the disease.
+        We aim for our device to significantly improve the quality-of-life burdens that myasthenia gravis imposes on those afflicted with the disease.
       </p>
       <p>
         We also aspire that the technological advances our B-Bot technology fosters can be applied to treat other diseases involving
