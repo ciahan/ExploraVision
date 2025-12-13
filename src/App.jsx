@@ -142,7 +142,7 @@ function Home() {
         These specific antibodies inhibit acetylcholine from binding to their receptors, impairing muscle function.
       </h2>
       <div>
-        <img className="pt-3 pb-2" src="/AChR.png" alt=""/>
+        <img className="pt-3 pb-2" src="./AChR.png" alt=""/>
         <h2 className=""> Depicted above is an illustration of the neuromuscular junction. </h2>
       </div>
       
@@ -163,7 +163,7 @@ function HistoryNano() {
   const slide1 = () => 
     <div className="p-10 mx-auto space-y-8" style={{  }}>
       <h1 class="text-6xl text-center">1959 - Conceptual foundation by Richard Feynman</h1>
-      <img className="h-80 w-auto mx-auto" src="newman-lab_xlk90v.webp" alt="" />
+      <img className="h-80 w-auto mx-auto" src="./newman-lab_xlk90v.webp" alt="" />
 
     </div>;
 
@@ -175,7 +175,7 @@ function HistoryNano() {
         <h1 class="text-6xl">
           Scanning Tunneling Microscope (STM) capable of manipulating individual xenon atoms
         </h1>
-        <img class="p-5 size-100" src="IBM_in_atoms.gif" alt="" />
+        <img class="p-5 size-100" src="./IBM_in_atoms.gif" alt="" />
       </div>
     </div>;
 
@@ -227,7 +227,7 @@ function HistoryMG() {
         Specifically, he described a woman who had temporarily lost her capability of speech, becoming "mute as a fish".
         While highly accurate, this account remained largely unnoticed in medical literature until 1903.
       </p>
-      <img class="pt-7 h-70 w-auto mx-auto" src="thomas wills.jpg" alt="" />
+      <img class="pt-7 h-70 w-auto mx-auto" src="./thomas wills.jpg" alt="" />
     </div>
   const slide2 = () => 
     <div className="py-6 px-20">
@@ -294,7 +294,7 @@ function TheProblem() {
       className = "p-10 px-20 flex gap-9"
     >
       <div className="flex items-center">
-        <img src="/pyridostigmine.png" alt="pyridostigmine" className="w-100 h-auto"/>
+        <img src="./pyridostigmine.png" alt="pyridostigmine" className="w-100 h-auto"/>
       </div>
       <div className = "space-y-5">
         <h1>
@@ -319,12 +319,12 @@ function TheProblem() {
         </div>
       </div>
     </div>
-    const prednisone = () =>
+  const prednisone = () =>
     <div
       className = "p-10 px-20 flex gap-13"
     >
       <div className="flex items-center">
-        <img src="public/Prednisone-removebg-preview.png" alt="pyridostigmine" className="w-[400px] h-auto"/>
+        <img src="./Prednisone-removebg-preview.png" alt="pyridostigmine" className="w-[400px] h-auto"/>
       </div>
       <div className = "space-y-5">
         <h1>
@@ -350,12 +350,12 @@ function TheProblem() {
         </div>
       </div>
     </div>
-    const thymectomy = () =>
+  const thymectomy = () =>
     <div
       className = "p-10 px-20 flex gap-13"
     >
       <div className="flex items-center">
-        <img src="/thymus.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
+        <img src="./thymus.png" alt="pyridostigmine" className="w-[500px] h-auto"/>
       </div>
       <div className = "space-y-5">
         <h1>
@@ -386,7 +386,7 @@ function TheProblem() {
       className = "p-10 px-20 flex gap-9"
     >
       <div className="flex items-center">
-        <img src="/rituximab.png" alt="pyridostigmine" className="w-[600px] h-auto"/>
+        <img src="./rituximab.png" alt="pyridostigmine" className="w-[600px] h-auto"/>
       </div>
       <div className = "space-y-5">
         <h1>
@@ -461,7 +461,7 @@ function OurSolution() {
         To regulate this breakdown, certain molecules like oligolysine conjugated to PEG can shield the nanobots and limit degradation of the DNA structure.
       </p>
       <div className="flex flex-col items-center justify-center">
-        <img src="DNAOrigami.png" alt="" />
+        <img src="./DNAOrigami.png" alt="" />
       </div>
       <p className="">
         In this model of DNA oragami molecules, you can see the external DNA capsule as well as the internal proteins and molecules that would be released to induce apoptosis.
@@ -482,7 +482,7 @@ function Impact() {
         and mental health. In a survey of 547 MG patients, 35% reported a significant negative impact
         on their social life and relationship with friends.
       </p>
-      <img src="/friends.png" alt=""/>
+      <img src="./friends.png" alt=""/>
       <p>
         We aim for our device to significantly improve the quality-of-life burdens that myasthenia gravis imposes on those afflicted with the disease.
       </p>
