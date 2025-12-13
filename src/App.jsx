@@ -160,17 +160,14 @@ function Home() {
 
 function HistoryNano() {
   const slide1 = () => 
-    <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
-      <div className="flex flex-col justify-center items-center">
-      <h1 class="text-6xl p-10">1959</h1>
-      <h1 class=" text-6xl p-5">Nanotechnology</h1>
-      <h1 class="text-6xl">Conceptual foundation by Richard Feynman</h1>
-      <img class="p-5" src="newman-lab_xlk90v.webp" alt="" />
-      </div>
+    <div className="p-10 mx-auto space-y-8" style={{  }}>
+      <h1 class="text-6xl text-center">1959 - Conceptual foundation by Richard Feynman</h1>
+      <img className="h-80 w-auto mx-auto" src="newman-lab_xlk90v.webp" alt="" />
+
     </div>;
 
   const slide2 = () =>
-    <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+    <div className="" style={{  }}>
       <div className="flex flex-col justify-center items-center">
         <h1 class="text-6xl p-10">1990</h1>
         <h1 class=" text-6xl p-5">STM</h1>
@@ -182,7 +179,7 @@ function HistoryNano() {
     </div>;
 
   const slide3 = () =>
-    <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+    <div className="" style={{  }}>
       <div className="flex flex-col justify-center items-center">
         <h1 class="text-6xl p-10">2001</h1>
         <h1 class=" text-6xl p-5">Nanomachines</h1>
@@ -193,7 +190,7 @@ function HistoryNano() {
     </div>;
 
   const slide4 = () =>
-    <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+    <div className="h-screen w-screen" style={{  }}>
       <div className="flex flex-col justify-center items-center">
         <h1 class="text-6xl p-10">2006</h1>
         <h1 class=" text-6xl p-5">DNA Origami
@@ -207,8 +204,14 @@ function HistoryNano() {
   const slides = [slide1, slide2, slide3, slide4]
 
   return (
-    <div>
-      <Slideshow slides={slides} />
+    <div className="mx-auto max-w-5xl px-4">
+      <h1 className="py-6"> History of Nanotechnology </h1>
+      <div
+        className= "rounded-3xl overflow-hidden"
+        style={{ backgroundColor: theme.purple, height: '500px'}}
+      >
+        <Slideshow slides={slides} />
+      </div>
     </div>
   );
 }
@@ -275,8 +278,8 @@ const slide4 = () => <div className="h-screen w-screen">
     <div className="mx-auto max-w-5xl px-4">
       <h1 className="py-6"> History of Myasthenia Gravis </h1>
       <div
-      className= "rounded-3xl overflow-hidden"
-      style={{ backgroundColor: theme.purple, height: '500px'}}
+        className= "rounded-3xl overflow-hidden"
+        style={{ backgroundColor: theme.purple, height: '500px'}}
       >
         <Slideshow slides={slides} />
       </div>
