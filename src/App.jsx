@@ -80,7 +80,7 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
       className={`sticky top-0 z-10 backdrop-blur transition-all ${scrolled ? "shadow-sm" : ""}`}
       style={{ background: theme.pink}}
     >
-      <div className="h-20 max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-10 py-3">
+      <div className="h-20 max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-8 py-3">
           <button className={link} style={{ color: theme.darkPurple }} onClick={onHome}>
             Home
           </button>
@@ -215,41 +215,28 @@ function HistoryNano() {
 
 function HistoryMG() {
   const slide1 = () => 
-  <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
-    <div className="flex flex-col justify-center items-center">
-    <h1 class="text-6xl p-10">1672</h1>
-    <h1 class=" text-6xl p-5">First Clinical Description</h1>
-    <p lass="text-m px-35">The historical record of MG begins with Thomas Willis, a famous English physician.</p>
-    <ul className="text-m px-35 py-5">
-      <li>Significance: Willis provided the first account of a patient with fluctuating muscle weakness that recovered after rest.</li>
-      <li>Early Case: He specifically described a woman who temporarily lost her power of speech, becoming "mute as a fish".</li>
-      <li>Impact: While highly accurate, this account was largely unnoticed in medical literature until 1903.</li>
-    </ul>
-    
-
-
-
-
-    <img class="p-5 size-60" src="Healthline_7-Common-Symptoms-of-H51Myasthenia-Gravis_1296x1740.png.avif" alt="" />
+    <div className="py-6 px-20">
+      <h1 class="pb-4"> 1672 - First Clinical Description </h1>
+      <p class="text-m">
+        The historical record of myasthenia gravis begins with Thomas Willis, a famous English physician.
+        He provided the first account of a patient with fluctuating muscle weakness that improved after rest.
+        Specifically, he described a woman who had temporarily lost her poewr of speech, becoming "mute as a fish".
+        While hightly accurate, this account remained largely unnoticed in medical literature until 1903.
+      </p>
+      <img class="p-5 size-60" src="thomas wills.jpg" alt="" />
     </div>
-  
-  </div>;
-  const slide2 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
-  <div className="flex flex-col justify-center items-center">
-  <h1 class="text-6xl p-10">1895</h1>
-  <h1 class=" text-6xl p-5">The Naming of Myasthenia Gravis</h1>
-  <p class="text-m px-35">In the late 19th century, German physicians formalized the condition as a distinct medical entity.</p>
-  <ul className="text-m px-35 py-5">
-    <li>Significance: Friedrich Jolly coined the term "myasthenia gravis pseudoparalytica".</li>
-    <li>Etymology: The name combined the Greek mya (muscle) and asthenia (weakness) with the Latin gravis (severe).</li>
-    <li>Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel Goldflam (1893), which were previously known as the "Erb-Goldflam symptom complex".</li>
-  </ul>
-
-  
-  </div>
-
-</div>;
-  const slide3 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+  const slide2 = () => 
+    <div className="h-screen w-screen p-5">
+      <div className="flex flex-col justify-center items-center">
+      <h1 class="text-6xl p-10">1895 - The Naming of Myasthenia Gravis</h1>
+      <ul className="text-m py-5">
+        <li>Significance: Friedrich Jolly coined the term "myasthenia gravis pseudoparalytica".</li>
+        <li>Etymology: The name combined the Greek mya (muscle) and asthenia (weakness) with the Latin gravis (severe).</li>
+        <li>Context: Jolly's work built upon observations by Wilhelm Erb (1879) and Samuel Goldflam (1893), which were previously known as the "Erb-Goldflam symptom complex".</li>
+      </ul>
+      </div>
+    </div>;
+  const slide3 = () => <div className="h-screen w-screen">
   <div className="flex flex-col justify-center items-center">
   <h1 class="text-6xl p-10">1934</h1>
   <h1 class=" text-6xl p-5">The "Miracle at St. Alfege's"</h1>
@@ -263,7 +250,7 @@ function HistoryMG() {
   </div>
 
 </div>;
-const slide4 = () => <div className="h-screen w-screen" style={{ backgroundColor: theme.lightPurple }}>
+const slide4 = () => <div className="h-screen w-screen">
 <div className="flex flex-col justify-center items-center">
 <h1 class="text-6xl p-10">1960</h1>
 <h1 class=" text-6xl p-5">Establishing the Autoimmune Theory
@@ -285,8 +272,14 @@ const slide4 = () => <div className="h-screen w-screen" style={{ backgroundColor
   const slides = [slide1, slide2, slide3, slide4]
   
   return (
-    <div>
-      <Slideshow slides={slides} />
+    <div className="mx-auto max-w-5xl px-4">
+      <h1 className="py-6"> History of Myasthenia Gravis </h1>
+      <div
+      className= "rounded-3xl overflow-hidden"
+      style={{ backgroundColor: theme.purple, height: '500px'}}
+      >
+        <Slideshow slides={slides} />
+      </div>
     </div>
   );
 }
@@ -470,23 +463,6 @@ function Impact() {
     </div>
   );
 }
-// Add this new component function near the bottom of your file:
-
-function Footer() {
-  return (
-    <footer className={`sticky bottom-0 w-screen py-6 text-center text-sm`} style={{ backgroundColor: theme.pink, color: '#FFFFFF' }}>
-      <div className="max-w-6xl mx-auto px-4">
-        <p>
-          &copy; 2025 B-Bots |  
-          <a href="mailto:bbots@gmail.com" className="ml-1 text-white underline hover:text-gray-300 hover:no-underline transition duration-300">
-             Contact Us: bbots@gmail.com
-          </a>
-        </p>
-      </div>
-    </footer>
-  );
-}
-
 
 function Bibliography() {
   const sources = [
@@ -617,6 +593,21 @@ function Bibliography() {
         </ul>
       </div>
     </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className={`sticky bottom-0 w-screen py-6 text-center text-sm`} style={{ backgroundColor: theme.pink, color: '#FFFFFF' }}>
+      <div className="max-w-6xl mx-auto px-4">
+        <p>
+          &copy; 2025 B-Bots |  
+          <a href="mailto:bbots@gmail.com" className="ml-1 text-white underline hover:text-gray-300 hover:no-underline transition duration-300">
+             Contact Us: bbots@gmail.com
+          </a>
+        </p>
+      </div>
+    </footer>
   );
 }
 
