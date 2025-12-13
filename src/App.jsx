@@ -466,8 +466,7 @@ function OurSolution() {
       <p className="">
         In this model of DNA oragami molecules, you can see the external DNA capsule as well as the internal proteins and molecules that would be released to induce apoptosis.
       </p>
-      <p className="text-l font-bold">By Destroying B-cells, we can eliminate the harmful antibodies, allowing ACh to bind to receptors.</p>
-      
+      <p className="text-l py-3 font-bold">By destroying B-cells, we can eliminate the harmful antibodies, allowing ACh to bind to receptors and improve muscule function.</p>      
     </div>
   )
 }
