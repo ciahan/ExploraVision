@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { div, link } from "framer-motion/client";
+import { b, div, link } from "framer-motion/client";
 
 function usePoppins() {
   useEffect(() => {
@@ -60,7 +60,7 @@ const Slideshow = ({ slides }) => {
   )
 }
 
-function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolution, onImpact, onBibliography }) {
+function Header({ activePage, onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolution, onImpact, onBibliography }) {
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   useEffect(() => {
@@ -74,14 +74,22 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
     "cursor-pointer text-base font-semibold hover:underline underline-offset-[6px] focus-visible:underline focus:outline-none transition-all duration-300 ease-in-out";
   const dropdownItemStyle = 
     "cursor-pointer block w-full text-left px-4 py-2 text-sm font-medium hover:bg-opacity-20 transition-colors hover:underline underline-offset-[6px] focus-visible:underline focus:outline-none transition-all duration-300 ease-in-out";
-  
+  const getStyle = (pageID) => ({
+    color: theme.darkPurple,
+    backgroundColor: (activePage === pageID) ? theme.purple : "transparent",
+    borderRadius: 5,
+    paddingTop: 3,
+    paddingBottom: 3,
+    paddingLeft: 5,
+    paddingRight: 5,
+  })
     return (
     <div
       className={`sticky top-0 z-10 backdrop-blur transition-all ${scrolled ? "shadow-sm" : ""}`}
       style={{ background: theme.pink}}
     >
       <div className="h-20 max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-8 py-3">
-          <button className={link} style={{ color: theme.darkPurple }} onClick={onHome}>
+          <button className={link} style={ getStyle("home") } onClick={onHome}>
             Home
           </button>
           <div 
@@ -89,7 +97,18 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-          <button className="font-semibold cursor-pointer" style={{ color: theme.darkPurple }}>
+          <button
+            className="font-semibold cursor-pointer"
+            style={{ 
+              color: theme.darkPurple,
+              backgroundColor: (activePage === 'history-mg' || activePage === 'history-nano') ? theme.purple : 'transparent',
+              borderRadius: 5,
+              paddingTop: 3,
+              paddingBottom: 3,
+              paddingLeft: 5,
+              paddingRight: 5,
+            }}
+            onClick={() => setDropdownOpen(!dropdownOpen)}>
             History
           </button>
             {dropdownOpen && (
@@ -114,16 +133,16 @@ function Header({ onHome, onHistoryMG, onHistoryNano, onTheProblem, onOurSolutio
               </div>
             )}
           </div>
-          <button className={link} style={{ color: theme.darkPurple }} onClick={onTheProblem}>
+          <button className={link} style={ getStyle('the problem')} onClick={onTheProblem}>
             The Problem
           </button>
-          <button className={link} style={{ color: theme.darkPurple }} onClick={onOurSolution}>
+          <button className={link} style={ getStyle("our solution") } onClick={onOurSolution}>
             Our Solution
           </button>
-          <button className={link} style={{ color: theme.darkPurple }} onClick={onImpact}>
+          <button className={link} style={ getStyle("impact") } onClick={onImpact}>
             Impact
           </button>
-          <button className={link} style={{ color: theme.darkPurple }} onClick={onBibliography}>
+          <button className={link} style={ getStyle("bibliography") } onClick={onBibliography}>
             Bibliography
           </button>
         </div>
@@ -454,17 +473,26 @@ function OurSolution() {
       </p>
       <p>
         In order to identify the specific B-cells that produce AChR antibodies, our nanobots will be specifically designed to recognize cell markers on the B-cells such as CD319, CD27, CD38, and CD138.
-        Once the cells are identified, specific molecules that can induce apoptosis in the B-cells will be released from the DNA capsules. Since DNA Origami is made out of biocompatible materials like proteins and DNA segments,
-        the body will be able to break them down after they have performed their function.
+        Once the cells are identified, specific molecules that can induce apoptosis in the B-cells will be released from the DNA capsules. 
       </p>
-      <p>
-        To regulate this breakdown, certain molecules like oligolysine conjugated to PEG can shield the nanobots and limit degradation of the DNA structure.
-      </p>
-      <div className="flex flex-col items-center justify-center">
-        <img src="./DNAOrigami.png" alt="" />
+      <div
+        className="flex"
+      >
+        <div className="flex-1 column mr-5">
+          <img src="./ExploraVision Model 3.jpg" alt=""/>
+        </div>
+        <div className="flex-1 column">
+          Our current model has many limitations. Firstly, it is undetermined what molecule should be used to induce apoptosis.
+          Additionally, we do not have a concrete mechanism for releasing the molecule. There are many cell markers involved
+          in the recognition of specific B-cells, so we would need to determine which markers to target with antibodies, and how the
+          antibodies would interact with the rest of the nanobot. Additional research also needs to be done to identify possible
+          differences in the environments where B-cells are found, as this would improve the accuracy of the B-Bots.
+        </div>
       </div>
-      <p className="">
-        In this model of DNA oragami molecules, you can see the external DNA capsule as well as the internal proteins and molecules that would be released to induce apoptosis.
+      <p>
+        Since DNA Origami is made out of biocompatible materials like proteins and DNA segments,
+        the body will be able to break them down after they have performed their function.
+        To regulate this breakdown, certain molecules like oligolysine conjugated to PEG can shield the nanobots and limit degradation of the DNA structure.
       </p>
       <p className="text-l py-3 font-bold">By destroying B-cells, we can eliminate the harmful antibodies, allowing ACh to bind to receptors and improve muscule function.</p>      
     </div>
@@ -647,12 +675,14 @@ export default function App() {
 
   const [page, setPage] = useState({ name: "home" });
   const [padVisible, setPadVisible] = useState(
-  () => localStorage.getItem("padVis") !== "0"
-);
+    () => localStorage.getItem("padVis") !== "0"
+  );
 
-useEffect(() => {
-  localStorage.setItem("padVis", padVisible ? "1" : "0");
-}, [padVisible]);
+  useEffect(() => 
+    {
+      localStorage.setItem("padVis", padVisible ? "1" : "0");
+    }, [padVisible]
+  );
 
   return (
     <div>
@@ -664,6 +694,7 @@ useEffect(() => {
         }}
       >
         <Header
+          activePage={page.name}
           onHome={() => setPage({ name: "home" })}
           onHistoryMG={() => setPage({ name: "history-mg" })}
           onHistoryNano={() => setPage({name: "history-nano"})}
